@@ -16,7 +16,7 @@ def add_hat(img, hat_img):
     r, g, b, a = cv2.split(hat_img)
     rgb_hat = cv2.merge([r, g, b])
 
-    cv2.imwrite("hat_alpha.jpg", a)
+    cv2.imwrite(".\christmas\hat_alpha.jpg", a)
     # ------------------------- 用dlib的人脸检测代替OpenCV的人脸检测-----------------------
     # # 灰度变换
     # gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -27,7 +27,7 @@ def add_hat(img, hat_img):
     # ------------------------- 用dlib的人脸检测代替OpenCV的人脸检测-----------------------
 
     # dlib人脸关键点检测器
-    predictor_path = "shape_predictor_5_face_landmarks.dat"
+    predictor_path = ".\christmas\shape_predictor_5_face_landmarks.dat"
     predictor = dlib.shape_predictor(predictor_path)
     predictor = dlib.shape_predictor(predictor_path)
 
@@ -98,13 +98,13 @@ def add_hat(img, hat_img):
             bg = cv2.multiply(alpha, bg_roi)
             bg = bg.astype('uint8')
 
-            cv2.imwrite("bg.jpg", bg)
+            cv2.imwrite(".\christmas\bg.jpg", bg)
             # cv2.imshow("image",img)
             # cv2.waitKey()
 
             # 提取帽子区域
             hat = cv2.bitwise_and(resized_hat, resized_hat, mask=mask)
-            cv2.imwrite("hat.jpg", hat)
+            cv2.imwrite(".\christmas\hat.jpg", hat)
 
             # cv2.imshow("hat",hat)
             # cv2.imshow("bg",bg)
@@ -130,16 +130,16 @@ def add_hat(img, hat_img):
 
 
 # 读取帽子图，第二个参数-1表示读取为rgba通道，否则为rgb通道
-hat_img = cv2.imread("hat2.png", -1)
+hat_img = cv2.imread(".\christmas\hat2.png", -1)
 
 # 读取头像图
-img = cv2.imread("test2.png")
+img = cv2.imread(".\christmas\girl.jpg")
 output = add_hat(img, hat_img)
 
 # 展示效果
 cv2.imshow("output", output)
 cv2.waitKey(0)
-cv2.imwrite("output.jpg", output)
+cv2.imwrite(".\christmas\output.jpg", output)
 # import glob as gb
 
 # img_path = gb.glob("./images/*.jpg")
