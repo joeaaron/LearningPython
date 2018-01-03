@@ -200,6 +200,33 @@ class QMainWindow(QtGui.QMainWindow):
             if not self.GetImage(id, '%s/x%d.bmp'%(dir, 12)):
                 return False
         return True
+    def PushFiles(self):
+        try:
+            print 'file 1 transfering'
+            self.ssh.firmware_put('image\\transformationTable1.bin', '/data/cowa_cam_config/transformationTable1.bin')
+            print 'file 2 transfering'
+            self.ssh.firmware_put('image\\transformationTable2.bin', '/data/cowa_cam_config/transformationTable2.bin')
+            print 'file 4 transfering'
+            self.ssh.firmware_put('image\\transformationTable4.bin', '/data/cowa_cam_config/transformationTable4.bin')
+            print 'file all transfered'
+
+            self.R1.closeCamera()
+            time.sleep(1)
+            pid = self.ssh.run('ps | grep cowarobot')
+            while '  ' in pid:
+                pid = pid.replace('  ', ' ')
+            pid = pid.split(' ')[1]
+            self.ssh.run('kill -9 %s' % pid)
+            print 'cowarobot reboot done'
+
+            time.sleep(1)
+            ip = str(self.ui.IP.text()).strip()
+            self.R1 = R1Debug.R1Debug(ip)
+            self.R1.openCamera()
+            print 'reconnected'
+        except:
+            QMessageBox.information(self, u"错误", u"标定过程完成， 文件传输错误", QMessageBox.Yes)
+            return
     def Run(self):
         self.ClearDir()
         for index in range(0, 7):
@@ -233,38 +260,14 @@ class QMainWindow(QtGui.QMainWindow):
         if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         
         self.WaitCalc()
-        try:
-            print 'file 1 transfering'
-            self.ssh.firmware_put('image\\transformationTable1.bin', '/data/cowa_cam_config/transformationTable1.bin')
-            print 'file 2 transfering'
-            self.ssh.firmware_put('image\\transformationTable2.bin', '/data/cowa_cam_config/transformationTable2.bin')
-            print 'file 4 transfering'
-            self.ssh.firmware_put('image\\transformationTable4.bin', '/data/cowa_cam_config/transformationTable4.bin')
-            print 'file all transfered'
-            
-            self.R1.closeCamera()
-            time.sleep(1)
-            pid = self.ssh.run('ps | grep cowarobot')
-            while '  ' in pid:
-                pid = pid.replace('  ', ' ')
-            pid = pid.split(' ')[1]
-            self.ssh.run('kill -9 %s'%pid)
-            print 'cowarobot reboot done'
-            
-            time.sleep(1)
-            ip = str(self.ui.IP.text()).strip()
-            self.R1 = R1Debug.R1Debug(ip)
-            self.R1.openCamera()
-            print 'reconnected'
-        except:
-            QMessageBox.information(self, u"错误", u"标定过程完成， 文件传输错误", QMessageBox.Yes)
-            return
+
         if self.Check():
             QMessageBox.information(self, u"OK", u"标定完成", QMessageBox.Yes)
         if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         self.Zip()
         self.LED(1)
     def Check(self):
+        self.PushFiles()
         lasers = []
         for pos in LaserTestPos:
             if not self.Target(pos):

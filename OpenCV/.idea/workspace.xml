@@ -12,100 +12,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ChristmasCap.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChristmasCap.py">
+      <file leaf-file-name="detproc.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/realtimeOnlineDet/detproc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-              <folding>
-                <element signature="e#355#373#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="425">
+              <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cali/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+            <state relative-caret-position="675">
+              <caret line="45" column="47" lean-forward="true" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
               <folding>
-                <element signature="n#!!doc" expanded="false" />
-                <element signature="e#866#1005#0" expanded="false" />
-                <element signature="e#1183#1415#0" expanded="false" />
-                <element signature="e#1253#1415#0" expanded="false" />
-                <element signature="e#1456#4431#0" expanded="false" />
-                <element signature="e#3531#3698#0" expanded="false" />
-                <element signature="e#3849#4169#0" expanded="false" />
-                <element signature="e#4462#4528#0" expanded="false" />
-                <element signature="e#4560#4628#0" expanded="false" />
-                <element signature="e#4657#5759#0" expanded="false" />
-                <element signature="e#4832#4878#0" expanded="false" />
-                <element signature="e#4938#5054#0" expanded="false" />
-                <element signature="e#5114#5230#0" expanded="false" />
-                <element signature="e#5290#5406#0" expanded="false" />
-                <element signature="e#5472#5560#0" expanded="false" />
-                <element signature="e#5788#5981#0" expanded="false" />
-                <element signature="e#5821#5908#0" expanded="false" />
-                <element signature="e#6014#6255#0" expanded="false" />
-                <element signature="e#6289#6604#0" expanded="false" />
-                <element signature="e#6638#6803#0" expanded="false" />
-                <element signature="e#6835#6989#0" expanded="false" />
-                <element signature="e#6925#6989#0" expanded="false" />
-                <element signature="e#7023#7162#0" expanded="false" />
-                <element signature="e#7051#7093#0" expanded="false" />
-                <element signature="e#7121#7162#0" expanded="false" />
-                <element signature="e#7207#7469#0" expanded="false" />
-                <element signature="e#7520#8187#0" expanded="false" />
-                <element signature="e#7580#7857#0" expanded="false" />
-                <element signature="e#7895#8012#0" expanded="false" />
-                <element signature="e#8050#8167#0" expanded="false" />
-                <element signature="e#8215#11225#0" expanded="false" />
-                <element signature="e#8277#8575#0" expanded="false" />
-                <element signature="e#8329#8418#0" expanded="false" />
-                <element signature="e#8486#8575#0" expanded="false" />
-                <element signature="e#8639#8937#0" expanded="false" />
-                <element signature="e#8691#8780#0" expanded="false" />
-                <element signature="e#8848#8937#0" expanded="false" />
-                <element signature="e#9329#9627#0" expanded="false" />
-                <element signature="e#9381#9470#0" expanded="false" />
-                <element signature="e#9538#9627#0" expanded="false" />
-                <element signature="e#9841#10860#0" expanded="false" />
-                <element signature="e#10889#10980#0" expanded="false" />
-                <element signature="e#11255#14577#0" expanded="false" />
-                <element signature="e#11312#11735#0" expanded="false" />
-                <element signature="e#11353#11448#0" expanded="false" />
-                <element signature="e#11607#11702#0" expanded="false" />
-                <element signature="e#12078#14556#0" expanded="false" />
-                <element signature="e#12147#13463#0" expanded="false" />
-                <element signature="e#12184#12268#0" expanded="false" />
-                <element signature="e#12322#12410#0" expanded="false" />
-                <element signature="e#12502#12721#0" expanded="false" />
-                <element signature="e#12823#12846#0" expanded="false" />
-                <element signature="e#13028#13247#0" expanded="false" />
-                <element signature="e#13819#14241#0" expanded="false" />
-                <element signature="e#13986#14023#0" expanded="false" />
-                <element signature="e#14066#14103#0" expanded="false" />
-                <element signature="e#14609#15255#0" expanded="false" />
-                <element signature="e#14670#14849#0" expanded="false" />
-                <element signature="e#14878#14959#0" expanded="false" />
-                <element signature="e#15083#15166#0" expanded="false" />
-                <element signature="e#15288#15701#0" expanded="false" />
-                <element signature="e#15422#15455#0" expanded="false" />
-                <element signature="e#15493#15701#0" expanded="false" />
-                <element signature="e#15745#16014#0" expanded="false" />
-                <element signature="e#16047#16117#0" expanded="false" />
-                <element signature="e#16151#16562#0" expanded="false" />
-                <element signature="e#16605#16891#0" expanded="false" />
-                <element signature="e#16661#16891#0" expanded="false" />
-                <element signature="e#16924#17247#0" expanded="false" />
-                <element signature="e#17286#17326#0" expanded="false" />
-                <element signature="e#17369#17567#0" expanded="false" />
-                <element signature="e#17595#18216#0" expanded="false" />
-                <element signature="e#17627#17832#0" expanded="false" />
-                <element signature="e#17710#17832#0" expanded="false" />
-                <element signature="e#18116#18198#0" expanded="false" />
-                <element signature="e#18249#18352#0" expanded="false" />
+                <element signature="e#356#429#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,23 +36,31 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>showIP</find>
+      <find>丢帧</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ChristmasCap.py" />
+        <option value="$PROJECT_DIR$/cali/main.py" />
+        <option value="$PROJECT_DIR$/realtimeOnlineDet/detproc.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1864" />
-    <option name="height" value="1098" />
+    <option name="width" value="1843" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -170,6 +101,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="realtimeOnlineDet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="christmas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenCV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="cali" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -193,7 +152,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.allMyCats1">
+  <component name="RunManager" selected="Python.main">
     <configuration default="false" name="ChristmasCap" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -225,6 +184,42 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="OpenCV" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Python编程快速上手 让繁琐工作自动化pdf+源码/automate_online-materials/allMyCats1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="detproc" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/realtimeOnlineDet" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OpenCV" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/realtimeOnlineDet/detproc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cali" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OpenCV" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cali/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -294,14 +289,18 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.ChristmasCap" />
       <item index="1" class="java.lang.String" itemvalue="Python.allMyCats1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.detproc" />
+      <item index="3" class="java.lang.String" itemvalue="Python.main" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.allMyCats1" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ChristmasCap" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.detproc" />
+        <item index="2" class="java.lang.String" itemvalue="Python.allMyCats1" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ChristmasCap" />
       </list>
     </recent_temporary>
   </component>
@@ -328,26 +327,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1864" height="1098" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1843" height="1080" extended-state="1" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25698325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28377613" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22812846" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23276836" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -356,18 +354,83 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ChristmasCap.py">
+    <entry file="file://$PROJECT_DIR$/realtimeOnlineDet/detproc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#355#373#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realtimeOnlineDet/detproc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realtimeOnlineDet/detproc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChristmasCap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realtimeOnlineDet/detproc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cali/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6075">
+          <caret line="243" column="50" lean-forward="true" selection-start-line="243" selection-start-column="50" selection-end-line="243" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChristmasCap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realtimeOnlineDet/detproc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChristmasCap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cali/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -375,112 +438,75 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#355#373#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChristmasCap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Add-Christmas-Hat/add_hat.py" />
     <entry file="file://$PROJECT_DIR$/../../Python编程快速上手 让繁琐工作自动化pdf+源码/automate_online-materials/allMyCats1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="25">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChristmasCap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="e#355#373#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cali/tmp.bmp">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/site-packages/requests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8307">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cali/ip_h3c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350">
+          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cali/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="675">
+          <caret line="45" column="47" lean-forward="true" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#866#1005#0" expanded="false" />
-            <element signature="e#1183#1415#0" expanded="false" />
-            <element signature="e#1253#1415#0" expanded="false" />
-            <element signature="e#1456#4431#0" expanded="false" />
-            <element signature="e#3531#3698#0" expanded="false" />
-            <element signature="e#3849#4169#0" expanded="false" />
-            <element signature="e#4462#4528#0" expanded="false" />
-            <element signature="e#4560#4628#0" expanded="false" />
-            <element signature="e#4657#5759#0" expanded="false" />
-            <element signature="e#4832#4878#0" expanded="false" />
-            <element signature="e#4938#5054#0" expanded="false" />
-            <element signature="e#5114#5230#0" expanded="false" />
-            <element signature="e#5290#5406#0" expanded="false" />
-            <element signature="e#5472#5560#0" expanded="false" />
-            <element signature="e#5788#5981#0" expanded="false" />
-            <element signature="e#5821#5908#0" expanded="false" />
-            <element signature="e#6014#6255#0" expanded="false" />
-            <element signature="e#6289#6604#0" expanded="false" />
-            <element signature="e#6638#6803#0" expanded="false" />
-            <element signature="e#6835#6989#0" expanded="false" />
-            <element signature="e#6925#6989#0" expanded="false" />
-            <element signature="e#7023#7162#0" expanded="false" />
-            <element signature="e#7051#7093#0" expanded="false" />
-            <element signature="e#7121#7162#0" expanded="false" />
-            <element signature="e#7207#7469#0" expanded="false" />
-            <element signature="e#7520#8187#0" expanded="false" />
-            <element signature="e#7580#7857#0" expanded="false" />
-            <element signature="e#7895#8012#0" expanded="false" />
-            <element signature="e#8050#8167#0" expanded="false" />
-            <element signature="e#8215#11225#0" expanded="false" />
-            <element signature="e#8277#8575#0" expanded="false" />
-            <element signature="e#8329#8418#0" expanded="false" />
-            <element signature="e#8486#8575#0" expanded="false" />
-            <element signature="e#8639#8937#0" expanded="false" />
-            <element signature="e#8691#8780#0" expanded="false" />
-            <element signature="e#8848#8937#0" expanded="false" />
-            <element signature="e#9329#9627#0" expanded="false" />
-            <element signature="e#9381#9470#0" expanded="false" />
-            <element signature="e#9538#9627#0" expanded="false" />
-            <element signature="e#9841#10860#0" expanded="false" />
-            <element signature="e#10889#10980#0" expanded="false" />
-            <element signature="e#11255#14577#0" expanded="false" />
-            <element signature="e#11312#11735#0" expanded="false" />
-            <element signature="e#11353#11448#0" expanded="false" />
-            <element signature="e#11607#11702#0" expanded="false" />
-            <element signature="e#12078#14556#0" expanded="false" />
-            <element signature="e#12147#13463#0" expanded="false" />
-            <element signature="e#12184#12268#0" expanded="false" />
-            <element signature="e#12322#12410#0" expanded="false" />
-            <element signature="e#12502#12721#0" expanded="false" />
-            <element signature="e#12823#12846#0" expanded="false" />
-            <element signature="e#13028#13247#0" expanded="false" />
-            <element signature="e#13819#14241#0" expanded="false" />
-            <element signature="e#13986#14023#0" expanded="false" />
-            <element signature="e#14066#14103#0" expanded="false" />
-            <element signature="e#14609#15255#0" expanded="false" />
-            <element signature="e#14670#14849#0" expanded="false" />
-            <element signature="e#14878#14959#0" expanded="false" />
-            <element signature="e#15083#15166#0" expanded="false" />
-            <element signature="e#15288#15701#0" expanded="false" />
-            <element signature="e#15422#15455#0" expanded="false" />
-            <element signature="e#15493#15701#0" expanded="false" />
-            <element signature="e#15745#16014#0" expanded="false" />
-            <element signature="e#16047#16117#0" expanded="false" />
-            <element signature="e#16151#16562#0" expanded="false" />
-            <element signature="e#16605#16891#0" expanded="false" />
-            <element signature="e#16661#16891#0" expanded="false" />
-            <element signature="e#16924#17247#0" expanded="false" />
-            <element signature="e#17286#17326#0" expanded="false" />
-            <element signature="e#17369#17567#0" expanded="false" />
-            <element signature="e#17595#18216#0" expanded="false" />
-            <element signature="e#17627#17832#0" expanded="false" />
-            <element signature="e#17710#17832#0" expanded="false" />
-            <element signature="e#18116#18198#0" expanded="false" />
-            <element signature="e#18249#18352#0" expanded="false" />
+            <element signature="e#356#429#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realtimeOnlineDet/detproc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
