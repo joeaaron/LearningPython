@@ -1,25 +1,48 @@
 import cv2
 from base_camera import BaseCamera
 
+class Pic():
+    def __init__(self):
+        # Using OpenCV to capture from device 0. If you have trouble capturing
+        # from a webcam, comment the line below out and use a video file
+        # instead.
+        #self.video = cv2.VideoCapture(0)
+        # If you decide to use video.mp4, you must have this file in the folder
+        # as the main.py.
+        self.video = cv2.VideoCapture('xing.avi')
+
+    def __del__(self):
+        self.video.release()
+
+    def get_frame(self):
+        success, image = self.video.read()
+        # We are using Motion JPEG, but OpenCV defaults to capture raw images,
+        # so we must encode it into JPEG in order to correctly display the
+        # video stream.
+        ret, jpeg = cv2.imencode('.jpg', image)
+        return jpeg.tobytes()
+
 class Camera(BaseCamera):
-    video_source = 0
+    def __init__(self):
+        # Using OpenCV to capture from device 0. If you have trouble capturing
+        # from a webcam, comment the line below out and use a video file
+        # instead.
+        self.video = cv2.VideoCapture(0)
+        # If you decide to use video.mp4, you must have this file in the folder
+        # as the main.py.
+        #self.video = cv2.VideoCapture('xing.avi')
 
-    @staticmethod
-    def set_video_source(source):
-        Camera.video_source = source
+    def __del__(self):
+        self.video.release()
 
-    @staticmethod
-    def frames():
-        camera = cv2.VideoCapture(0)
-        if not camera.isOpened():
-            raise RuntimeError('Could not start camera.')
-
-        while True:
-            # read current frame
-            _, img = camera.read()
-
-            # encode as a jpeg image and return it
-            yield cv2.imencode('.jpg', img)[1].tobytes()
+    def get_frame(self):
+        success, image = self.video.read()
+        res = cv2.resize(image, (640, 320))
+        # We are using Motion JPEG, but OpenCV defaults to capture raw images,
+        # so we must encode it into JPEG in order to correctly display the
+        # video stream.
+        ret, jpeg = cv2.imencode('.jpg', res)
+        return jpeg.tobytes()
 
 
 class VideoCamera(object):
@@ -37,9 +60,10 @@ class VideoCamera(object):
 
     def get_frame(self):
         success, image = self.video.read()
+        res = cv2.resize(image, (640, 480))
         # We are using Motion JPEG, but OpenCV defaults to capture raw images,
         # so we must encode it into JPEG in order to correctly display the
         # video stream.
-        ret, jpeg = cv2.imencode('.jpg', image)
+        ret, jpeg = cv2.imencode('.jpg', res)
         return jpeg.tobytes()
 

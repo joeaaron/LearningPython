@@ -1,10 +1,41 @@
 <html>
-  <head>
-    <title>Video Streaming Demonstration</title>
-  </head>
-  <body>
-    <h1>Video Streaming Demonstration</h1>
-    <img src="{{ url_for('video_feed1') }}">
-    <img src="{{ url_for('video_feed2') }}">
-  </body>
+
+<head>
+  <title>Video Streaming Demonstration</title>
+  <style>
+    .content{
+      display: -webkit-flex;
+      display: flex;
+    }
+    .leftContent{
+      -webkit-flex:1;
+      flex: 1;
+    }
+     .leftContent>img{
+      width: 100%
+    }
+    .rightContent{
+      -webkit-flex:1;
+      flex: 1;
+    }
+    .rightContent>img {
+      width: 100%;
+      display: block;
+      border: 1px solid gray;
+  </style>
+</head>
+
+<body>
+  <h1 align="center">Video Streaming Demonstration </h1>
+  <div class="content">
+    <div class="leftContent">
+       <img src="{{ url_for('video_feed0') }}">
+    </div>
+    <div class="rightContent">
+      <img src="{{ url_for('video_feed1') }}">
+      <img src="{{ url_for('video_feed2') }}">
+    </div>
+  </div>
+</body>
+
 </html>
