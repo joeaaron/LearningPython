@@ -2,18 +2,16 @@
 from importlib import import_module
 import os
 from flask import Flask, render_template, Response
+from flask_socketio import SocketIO, emit
 
 # import camera driver
-if os.environ.get('CAMERA'):
-    Camera = import_module('camera_' + os.environ['CAMERA']).Camera
-else:
-    from camera_opencv import Camera, VideoCamera, Pic
+from camera_opencv import Camera, Camera1
 
-# Raspberry Pi camera module (requires picamera package)
-# from camera_pi import Camera
 
 app = Flask(__name__)
 
+socketio = SocketIO()
+socketio.init_app(app)
 
 @app.route('/')
 def index():
@@ -27,23 +25,17 @@ def gen(camera):
         frame = camera.get_frame()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-@app.route('/video_feed0')
-def video_feed0():
-    """Video streaming route. Put this in the src attribute of an img tag."""
-    return Response(gen(Pic()),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
-
+			   
 @app.route('/video_feed1')
 def video_feed1():
     """Video streaming route. Put this in the src attribute of an img tag."""
-    return Response(gen(Camera()),
+    return Response(gen(Camera(1)),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/video_feed2')
 def video_feed2():
     """Video streaming route. Put this in the src attribute of an img tag."""
-    return Response(gen(VideoCamera()),
+    return Response(gen(Camera1(1)),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':

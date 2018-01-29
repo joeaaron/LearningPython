@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Video Streaming Demonstration</title>
+  <title>COWAROBOT AutoPilot</title>
   <style>
     .content{
       display: -webkit-flex;
@@ -12,24 +12,28 @@
       flex: 1;
     }
      .leftContent>img{
-      width: 100%
+      width: 100%;
+      display: block;
+      height: 680px;
+      border: 1px solid gray;
     }
     .rightContent{
       -webkit-flex:1;
       flex: 1;
     }
-    .rightContent>img {
+    .rightContent>img{
       width: 100%;
       display: block;
+      height: 340px;
       border: 1px solid gray;
+    }
   </style>
 </head>
-
+s
 <body>
-  <h1 align="center">Video Streaming Demonstration </h1>
   <div class="content">
     <div class="leftContent">
-       <img src="{{ url_for('video_feed0') }}">
+       <img src="{{ url_for('static', filename='map.jpg') }}">
     </div>
     <div class="rightContent">
       <img src="{{ url_for('video_feed1') }}">
