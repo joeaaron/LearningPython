@@ -6,10 +6,7 @@ class Camera(BaseCamera):
         # Using OpenCV to capture from device 0. If you have trouble capturing
         # from a webcam, comment the line below out and use a video file
         # instead.
-        if idx == 0:
-		    self.video = cv2.VideoCapture(idx)
-        else:
-            self.video = cv2.VideoCapture('xing.avi')
+		self.video = cv2.VideoCapture(idx)
 
     def __del__(self):
         self.video.release()
@@ -31,7 +28,7 @@ class Camera1(BaseCamera):
         # Using OpenCV to capture from device 0. If you have trouble capturing
         # from a webcam, comment the line below out and use a video file
         # instead.
-        if idx == 0:
+        if idx == 1:
 		    self.video = cv2.VideoCapture(idx)
         else:
             self.video = cv2.VideoCapture('tree.avi')
@@ -42,7 +39,7 @@ class Camera1(BaseCamera):
     def get_frame(self):
         success, image = self.video.read()
         if not success: 
-            self.video = cv2.VideoCapture('tree.avi')
+            self.video = cv2.VideoCapture()
             success, image = self.video.read()
         res = cv2.resize(image, (320, 320))
         # We are using Motion JPEG, but OpenCV defaults to capture raw images,
