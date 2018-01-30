@@ -37,8 +37,7 @@
          <script type="text/javascript" charset="utf-8">
             var c=document.getElementById("map");
             var cxt=c.getContext("2d");
-            var x=40;
-            var y=18;
+        
             var socket = io.connect();
 
             socket.on('connect', function() {
@@ -48,7 +47,7 @@
             socket.on('server_response', function(msg) {
                 cxt.fillStyle="#AFEEEE";
                 cxt.beginPath();
-                cxt.arc(msg.pos[0],msg.pos[1],3,0,Math.PI*2,true);
+                cxt.arc(msg.pos[0],msg.pos[1],2,0,Math.PI*2,true);
                 cxt.closePath();
                 cxt.fill();
                 console.log(msg)

@@ -6,6 +6,7 @@ from flask_socketio import SocketIO, emit
 from threading import Lock
 from gevent import monkey
 from gevent.pywsgi import WSGIServer
+import numpy as np
 #from geventwebsocket.handler import WebSocketHandler
 
 monkey.patch_all()
@@ -48,16 +49,17 @@ def video_feed2():
 
 def background_thread():
     x= 0
-    y =0
+    y =87
     while True:
         socketio.sleep(0.2)
         t = time.strftime('%M:%S', time.localtime()) 
+    
         socketio.emit('server_response', {'pos': [x,y]} )
         x += 1
-        y += 2
+        #y += 2
         x %=200
-        y %=200
-        #print 'hello'
+        #y %=200
+        print 'hello'
         
 @socketio.on('connect_event')
 def connected_msg(msg):
