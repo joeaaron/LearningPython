@@ -37,7 +37,22 @@
          <script type="text/javascript" charset="utf-8">
             var c=document.getElementById("map");
             var cxt=c.getContext("2d");
-        
+            var WIDTH = 568;
+            var HEIGHT = 684;
+            
+            function circle(x,y,r) {
+                cxt.beginPath();
+                cxt.arc(x,y,r,0,Math.PI*2,true);
+                cxt.fillStyle="#AFEEEE";
+                cxt.fill();
+                cxt.strokeStyle="#F8F8FF";
+                cxt.stroke();
+                cxt.closePath();
+            }
+            function clear() {
+                cxt.clearRect(0, 0, WIDTH, HEIGHT);
+            } 
+            ///websocket connect
             var socket = io.connect();
 
             socket.on('connect', function() {
@@ -45,19 +60,17 @@
             })
 
             socket.on('server_response', function(msg) {
-                cxt.fillStyle="#AFEEEE";
-                cxt.beginPath();
-                cxt.arc(msg.pos[0],msg.pos[1],2,0,Math.PI*2,true);
-                cxt.closePath();
-                cxt.fill();
+                clear();
+                circle(msg.pos[0],msg.pos[1],2)
+            
                 console.log(msg)
             });
         </script>
     </div>
 
     <div class="rightContent">
-      <img src="{{ url_for('video_feed1') }}">
-      <img src="{{ url_for('video_feed2') }}">
+      <img src="http://123.206.211.163:5001/video_feed">
+      <img src="http://123.206.211.163:5002/video_feed">
     </div>
   </div>
 </body>
