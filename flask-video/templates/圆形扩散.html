@@ -41,9 +41,9 @@
     };  
     //  创建
     var newfun = null;
-    function createCircles(){ 
+    function createCircles(x, y){ 
            
-      newfun= new Circle(120,50,radius);//调用构造函数
+      newfun= new Circle(x,y,radius);//调用构造函数
       newfun.paint();
    
       newfun.radiu();  
@@ -57,17 +57,17 @@
         context.globalAlpha = 0.95;
         //显示即将绘制的图像，忽略临时canvas中已存在的图像
         backCtx.globalCompositeOperation = 'copy';
-    var render = function() {
+ 	function render(x, y) {
         //先将主canvas的图像缓存到临时canvas中
         backCtx.drawImage(canvas, 0, 0, width, height);        
         //清除主canvas上的图像
         context.clearRect(0, 0, width, height);
         //在主canvas上画新圆
-        createCircles();
+        createCircles(x, y);
         //等新圆画完后，再把临时canvas的图像绘制回主canvas中
         context.drawImage(backCanvas, 0, 0, width, height);
     };
-    setInterval("render()", 14);
+    setInterval("render(120, 210)", 14);
     </script> 
 </body>
 </html>
