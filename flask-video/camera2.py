@@ -17,8 +17,6 @@ from camera_opencv import Camera
 
 app = Flask(__name__)
 
-pwd = sys.path[0]
-
 camears = [Camera('videos/car2.avi')]
 
 def gen(camera):
