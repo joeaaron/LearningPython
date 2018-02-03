@@ -17,7 +17,7 @@ from camera_opencv import Camera
 
 app = Flask(__name__)
 
-camears = [Camera('videos/car2.avi')]
+camears = [Camera('videos/car1.avi')]
 
 def gen(camera):
     """Video streaming generator function."""
@@ -35,6 +35,6 @@ def video_feed():
 
 if __name__ == '__main__':
     #socketio.run(app,debug=False,host='0.0.0.0', port=5000)
-    http_server = WSGIServer(('0.0.0.0', 5002), app)
+    http_server = WSGIServer(('0.0.0.0', 7002), app)
     http_server.serve_forever()
     #app.run(host='0.0.0.0', port=5000)

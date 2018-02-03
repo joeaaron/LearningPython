@@ -60,6 +60,6 @@ if __name__ == '__main__':
     Process(target = camear1).start()
     Process(target = camear2).start()
     #socketio.run(app,debug=False,host='0.0.0.0', port=5000)
-    http_server = WSGIServer(('0.0.0.0', 5000), app)
+    http_server = WSGIServer(('0.0.0.0', 70), app)
     http_server.serve_forever()
     #app.run(host='0.0.0.0', port=5000)
