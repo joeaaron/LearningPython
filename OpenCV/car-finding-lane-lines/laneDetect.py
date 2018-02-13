@@ -125,7 +125,9 @@ def hough_lines(image):
     
     Returns hough lines (not the image with lines)
     """
-    return cv2.HoughLinesP(image, rho=1, theta=np.pi/180, threshold=20, minLineLength=20, maxLineGap=300)
+
+    plines = cv2.HoughLinesP(image, rho=1, theta=np.pi/180, threshold=20, minLineLength=20, maxLineGap=300)
+    return plines
 
 def draw_lines(image, lines, color=[255, 0, 0], thickness=2, make_copy=True):
     # the lines returned by cv2.HoughLinesP has the shape (-1, 1, 4)
@@ -189,7 +191,6 @@ def lane_lines(image, lines):
     right_line = make_line_points(y1, y2, right_lane)
     
     return left_line, right_line
-
     
 def draw_lane_lines(image, lines, color=[255, 0, 0], thickness=20):
     # make a separate image to draw lines and combine with the orignal later
@@ -208,24 +209,42 @@ def process_video(video_input, video_output):
     processed = clip.fl_image(detector.process)
     processed.write_videofile(os.path.join('output_videos', video_output), audio=False)
     
+def process(image):
+    white_yellow = select_white_yellow(image)
+    gray = convert_gray_scale(white_yellow)
+    smooth_gray = apply_smoothing(gray)
+    edges = detect_edges(smooth_gray)
+    regions = select_region(edges)
+    lines = hough_lines(regions)
+    left_line, right_line = lane_lines(image, lines)
+
+   # left_line  = self.mean_line(left_line,  self.left_lines)
+   # right_line = self.mean_line(right_line, self.right_lines)
+
+    lane_images = draw_lane_lines(image, (left_line, right_line))
+    show_images(lane_images)
+
 #show_images(list(map(convert_hls, test_images)))
 if __name__ == '__main__':
-    # test_images = [plt.imread(path) for path in glob.glob('test_images/*.jpg')]
+    test_images = [plt.imread(path) for path in glob.glob('test_images/*.jpg')]
+    white_yellow_images = list(map(select_white_yellow, test_images))
+    gray_images = list(map(convert_gray_scale, white_yellow_images))
+    blurred_images = list(map(lambda image: apply_smoothing(image), gray_images))
+    edge_images = list(map(lambda image: detect_edges(image), blurred_images))
+    roi_images = list(map(select_region, edge_images))
+    list_of_lines = list(map(hough_lines, roi_images))
     
-    # white_yellow_images = list(map(select_white_yellow, test_images))
-    # gray_images = list(map(convert_gray_scale, white_yellow_images))
-    # blurred_images = list(map(lambda image: apply_smoothing(image), gray_images))
-    # edge_images = list(map(lambda image: detect_edges(image), blurred_images))
-    # roi_images = list(map(select_region, edge_images))
-    # list_of_lines = list(map(hough_lines, roi_images))
+    line_images = []
+    for image, lines in zip(test_images, list_of_lines):
+        line_images.append(draw_lines(image, lines))
     
-    # line_images = []
-    # for image, lines in zip(test_images, list_of_lines):
-        # line_images.append(draw_lines(image, lines))
-    
-    # lane_images = []
-    # for image, lines in zip(test_images, list_of_lines):
-        # lane_images.append(draw_lane_lines(image, lane_lines(image, lines)))
+    lane_images = []
+    for image, lines in zip(test_images, list_of_lines):
+        lane_images.append(draw_lane_lines(image, lane_lines(image, lines)))
         
-    #show_images(lane_images)
-    process_video("solidYellowLeft.mp4", "white2.mp4")
+    show_images(lane_images)
+    
+    # test_images = cv2.imread("solidWhiteCurve.jpg")
+    # process(test_images)
+    
+    #process_video("solidYellowLeft.mp4", "white2.mp4")
