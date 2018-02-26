@@ -192,12 +192,15 @@ def lane_lines(image, lines):
     
     return left_line, right_line
     
-def draw_lane_lines(image, lines, color=[255, 0, 0], thickness=20):
+def draw_lane_lines(image, lines, color=[255, 0, 0], thickness= 20):
     # make a separate image to draw lines and combine with the orignal later
     line_image = np.zeros_like(image)
     for line in lines:
         if line is not None:
+            #line[0] first point, line[1] second point
             cv2.line(line_image, line[0], line[1], color, thickness)
+            cv2.imshow('demo', line_image)
+            cv2.waitKey(0)
     # image1 * α + image2 * β + λ
     # image1 and image2 must be the same shape.
     return cv2.addWeighted(image, 1.0, line_image, 0.95, 0.0)
@@ -222,7 +225,7 @@ def process(image):
    # right_line = self.mean_line(right_line, self.right_lines)
 
     lane_images = draw_lane_lines(image, (left_line, right_line))
-    show_images(lane_images)
+    #show_images(lane_images)
 
 #show_images(list(map(convert_hls, test_images)))
 if __name__ == '__main__':
