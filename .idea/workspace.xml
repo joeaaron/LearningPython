@@ -2,8 +2,99 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19375ab2-5a41-4d67-89aa-2ab8d268d32f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flask-video/camera_opencv.py" afterPath="$PROJECT_DIR$/flask-video/camera_opencv.py" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/.idea/cali.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/R1Debug.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/R1Shell.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/Calib.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/calibrate.exe" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/opencv_calib3d320d.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/opencv_core320d.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/opencv_features2d320d.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/opencv_flann320d.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/opencv_highgui320d.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/opencv_imgcodecs320d.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/opencv_imgproc320d.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/bin/opencv_videoio320d.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/main.exe.manifest" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/out00-Analysis.toc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/out00-EXE.toc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/out00-PKG.pkg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/out00-PKG.toc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/out00-PYZ.pyz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/out00-PYZ.toc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/out00-Tree.toc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/out01-Tree.toc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/warnmain.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/build/main/xref-main.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/calibrate.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/check.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/component.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/dist/ecatmc.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/dist/main.exe" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/ecatmc.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/ip_h3c.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/main.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/main.spec" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/motion/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/motion/servotronix.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/errors.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/pytesser.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/DangAmbigs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/blackText.params" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/api_config" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/api_resaljet" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/box.train" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/inter" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/oldapi_config" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/oldbox.train" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/var_api_config" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/var_box.train" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/configs/variable_config" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/confsets" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/fmtable.cls" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/fnetwts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/freq-dawg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/inttemp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/netwts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/newdiff.asccodes" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/normproto" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/pffmtable" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/soptable.cls" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/tessconfigs/batch" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/tessconfigs/matdemo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/tessconfigs/old_batch" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/tessconfigs/segdemo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/tessconfigs/var_batch" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/test_matrix" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/user-words" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tessdata/word-dawg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/tesseract.exe" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/pytesser/util.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/setup.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/ui/check.ui" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/ui/main.ui" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/xml/VID5.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/xml/_VID5.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/xml/config.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/xml/in_VID5.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/OpenCV/cali/xml/stereo_calib.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/app.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/base_camera.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/camera1.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/camera2.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/camera_opencv.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/client.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/static/map.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/static/map.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/templates/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/videos/car1.avi" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/videos/car1.mp4" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cam_web/webcamera.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,13 +103,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask-video/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="441">
               <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
               <folding />
             </state>
@@ -28,8 +118,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask-video/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="27" />
+            <state relative-caret-position="525">
+              <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
               <folding>
                 <element signature="e#22#57#0" expanded="true" />
               </folding>
@@ -37,20 +127,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="camera.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flask-video/camera.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="13" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="camera_opencv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flask-video/camera_opencv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="126">
               <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -89,9 +169,15 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="771" />
+    <option name="y" value="575" />
     <option name="width" value="1861" />
     <option name="height" value="1098" />
   </component>
@@ -110,58 +196,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LearningPython" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LearningPython" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LearningPython" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LearningPython" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flask-video" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LearningPython" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LearningPython" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flask-video" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/OpenCV/car-finding-lane-lines" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -181,7 +223,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.app">
-    <configuration default="false" name="RealTimeMonitor" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="RealTimeMonitor" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -193,13 +235,33 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LearningPython" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AutoWork/RealTimeMonitor.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <method />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration default="false" name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Python27\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OpenCV/flask" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LearningPython" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OpenCV/flask/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -211,13 +273,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LearningPython" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flask-video/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <method />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration default="false" name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -229,31 +292,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LearningPython" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OpenCV/flask/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="D:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OpenCV/flask" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LearningPython" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OpenCV/flask/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <method />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration default="false" name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -265,11 +311,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LearningPython" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/video-service-flask/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <method />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -330,10 +377,10 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LearningPython" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;.&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method />
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.RealTimeMonitor" />
@@ -375,20 +422,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1861" height="1098" extended-state="1" />
-    <editor active="true" />
+    <frame x="771" y="575" width="1861" height="1098" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2115277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21099389" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779622" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17165005" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17165005" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986711" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -396,6 +443,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779622" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -442,14 +490,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/flask-video/camera.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="13" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/flask-video/camera.py" />
     <entry file="file://$PROJECT_DIR$/flask-video/camera_opencv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1000">
@@ -478,14 +519,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask-video/camera.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="13" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/flask-video/camera.py" />
     <entry file="file://$PROJECT_DIR$/flask-video/camera_opencv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -503,38 +537,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenCV/cali/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenCV/cali/main.py" />
     <entry file="file://$PROJECT_DIR$/OpenCV/AutoWork/zophie.png" />
-    <entry file="file://$PROJECT_DIR$/OpenCV/cali/main.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenCV/cali/calibrate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenCV/cali/main.spec" />
+    <entry file="file://$PROJECT_DIR$/OpenCV/cali/calibrate.py" />
     <entry file="file://F:/install/Python2.7/Lib/site-packages/PIL/Image.py" />
     <entry file="file://F:/install/Python2.7/Lib/os.py" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.js" />
-    <entry file="file://$PROJECT_DIR$/OpenCV/cali/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="359" column="12" lean-forward="true" selection-start-line="359" selection-start-column="12" selection-end-line="359" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenCV/cali/main.py" />
     <entry file="file://$PROJECT_DIR$/OpenCV/AutoWork/OperateImg.py" />
     <entry file="file://$PROJECT_DIR$/AutoWork/catlogo.png">
       <provider selected="true" editor-type-id="images">
@@ -549,20 +559,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AutoWork/RealTimeMonitor.py" />
-    <entry file="file://$PROJECT_DIR$/OpenCV/cali/ip_h3c.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-900">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python27/Lib/SocketServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="595" column="0" lean-forward="false" selection-start-line="595" selection-start-column="0" selection-end-line="595" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenCV/cali/ip_h3c.py" />
+    <entry file="file://D:/Python27/Lib/SocketServer.py" />
     <entry file="file://$PROJECT_DIR$/flask-video/camera1_opencv.py" />
     <entry file="file://$PROJECT_DIR$/OpenCV/flask/app.py" />
     <entry file="file://$PROJECT_DIR$/OpenCV/ChristmasCap.py">
@@ -572,20 +570,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenCV/flask/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenCV/flask/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="917">
-          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenCV/flask/index.html" />
+    <entry file="file://$PROJECT_DIR$/OpenCV/flask/main.py" />
     <entry file="file://$PROJECT_DIR$/video-service-flask/requirements.txt" />
     <entry file="file://$PROJECT_DIR$/video-service-flask/create_db.py" />
     <entry file="file://$PROJECT_DIR$/video-service-flask/app.json" />
@@ -602,36 +588,21 @@
     <entry file="file://$PROJECT_DIR$/video-service-flask/twilio/task_router/__init__.py" />
     <entry file="file://$PROJECT_DIR$/video-service-flask/twilio/jwt/__init__.py" />
     <entry file="file://$PROJECT_DIR$/video-service-flask/run.py" />
-    <entry file="file://$PROJECT_DIR$/../index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../index.html" />
     <entry file="file://$PROJECT_DIR$/../index(1).html" />
     <entry file="file://$PROJECT_DIR$/../index(2).html" />
-    <entry file="file://$PROJECT_DIR$/flask-video/camera_pi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/flask-video/camera_pi.py" />
     <entry file="file://$PROJECT_DIR$/flask-video/base_camera.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flask-video/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="27" />
+        <state relative-caret-position="525">
+          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
           <folding>
             <element signature="e#22#57#0" expanded="true" />
           </folding>
@@ -640,23 +611,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flask-video/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="441">
           <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask-video/camera.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="13" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/flask-video/camera.py" />
     <entry file="file://$PROJECT_DIR$/flask-video/camera_opencv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="126">
           <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
