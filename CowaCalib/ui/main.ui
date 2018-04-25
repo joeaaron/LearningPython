@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>949</width>
+    <height>447</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>上海弈猫科技</string>
+  </property>
+  <widget class="QWidget" name="main">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0" rowspan="2" colspan="2">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>标定</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QListWidget" name="ips"/>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLineEdit" name="IP">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>192.168.1.103</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Connect</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_8">
+            <property name="font">
+             <font>
+              <family>3ds</family>
+              <pointsize>32</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>RUN</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>示教</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLineEdit" name="echo"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7"/>
+          </item>
+          <item>
+           <widget class="GraphWidget" name="plot"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QPushButton" name="pushButton_24">
+              <property name="text">
+               <string>LED开</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_31">
+              <property name="text">
+               <string>获取激光</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_9">
+              <property name="text">
+               <string>清空文件夹</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_10">
+              <property name="text">
+               <string>重新计算</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_11">
+              <property name="text">
+               <string>打包</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_32">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>获取图像</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="camIndex">
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>9</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>10</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>12</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>949</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action">
+   <property name="text">
+    <string>文件</string>
+   </property>
+  </action>
+  <action name="actionSend">
+   <property name="text">
+    <string>发送文件</string>
+   </property>
+  </action>
+  <action name="actionTarget">
+   <property name="text">
+    <string>连接</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="text">
+    <string>升级固件</string>
+   </property>
+  </action>
+  <action name="actionConsole">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>控制台</string>
+   </property>
+  </action>
+  <action name="actionLoadDebug">
+   <property name="text">
+    <string>加载调试文件</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GraphWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>component</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Run()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>308</x>
+     <y>392</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Connect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>740</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>621</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_9</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ClearDir()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>409</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>93</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_10</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>CalibrateCalc()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>452</x>
+     <y>409</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>362</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Zip()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>563</x>
+     <y>409</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>522</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_24</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SwitchLed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>104</x>
+     <y>409</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_31</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>GetLaser()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>404</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-13</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_32</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ShowImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>599</x>
+     <y>384</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>590</x>
+     <y>468</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>Zero()</slot>
+  <slot>RAdd()</slot>
+  <slot>RDec()</slot>
+  <slot>Home()</slot>
+  <slot>MotionOpen()</slot>
+  <slot>RSTop()</slot>
+  <slot>Enable()</slot>
+  <slot>Disable()</slot>
+  <slot>Run()</slot>
+  <slot>Connect()</slot>
+  <slot>ClearDir()</slot>
+  <slot>CalibrateCalc()</slot>
+  <slot>Zip()</slot>
+  <slot>XAdd()</slot>
+  <slot>XDec()</slot>
+  <slot>YAdd()</slot>
+  <slot>YDec()</slot>
+  <slot>ZAdd()</slot>
+  <slot>ZDec()</slot>
+  <slot>RowAdd()</slot>
+  <slot>RowDec()</slot>
+  <slot>PitchAdd()</slot>
+  <slot>PitchDec()</slot>
+  <slot>XStop()</slot>
+  <slot>YStop()</slot>
+  <slot>ZStop()</slot>
+  <slot>RowStop()</slot>
+  <slot>PitchStop()</slot>
+  <slot>RecordPos()</slot>
+  <slot>GotoPos()</slot>
+  <slot>SwitchLed()</slot>
+  <slot>RowAdd15()</slot>
+  <slot>RowDec15()</slot>
+  <slot>PAdd15()</slot>
+  <slot>PDec15()</slot>
+  <slot>RAdd15()</slot>
+  <slot>RDec15()</slot>
+  <slot>GetLaser()</slot>
+  <slot>Check()</slot>
+  <slot>ShowImage()</slot>
+ </slots>
+</ui>
