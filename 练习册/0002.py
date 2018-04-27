@@ -20,7 +20,7 @@ def generate_code(count, length):
         yield Re
  
 def save_code():
-    conn = mysql.connector.connect(user='root', password='1', database='test')
+    conn = mysql.connector.connect(user='root', password='123456', database='test')
     cursor = conn.cursor()
     codes = generate_code(200, 20)
     for code in codes:
