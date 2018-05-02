@@ -1,0 +1,10 @@
+*.pyc
+AutoCalib/
+ECAT-Program/
+*.jpg
+*.bmp
+testdata/
+image/
+*.zip
+*.backup
+*.log

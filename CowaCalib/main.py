@@ -2,8 +2,8 @@
 # -*- coding: UTF-8 -*-
  ############################################################
  #  Created on: 2018.04                                     #
- #  Author: Joe Aaron                                    #
- #  Email:  pant333@163.com                           #
+ #  Author: cowa                                            #
+ #  Email:  aaron.pan@cowarobot.com                         #
  ############################################################
 import sys, math, copy, threading, struct, socket, ConfigParser, time, os
 import pickle
@@ -16,15 +16,10 @@ import numpy as np
 
 import R1Debug, R1Shell
 import scipy.misc
+import iobag
 from motion import *
 from check import *
 import ip_h3c
-
-def P2P(axis, pos, vel):
-    if motion_axis_p2p(axis, pos, vel): return False
-    time.sleep(0.5)
-    if motion_axis_wait_finished(axis): return False  
-    return True
 
 class QMainWindow(QtGui.QMainWindow):
     R1 = None
@@ -32,6 +27,7 @@ class QMainWindow(QtGui.QMainWindow):
     ssh = None
     ledon = False
     image = None
+    io = None
     h3c = ip_h3c.H3CRouter()
     def showIP(self):
         self.ui.ips.clear()
@@ -42,9 +38,8 @@ class QMainWindow(QtGui.QMainWindow):
             self.ui.ips.addItem(current_time)
     def __init__(self, *args ):
         super(QMainWindow, self).__init__()   
-        
         self.ui = uic.loadUi('ui/main.ui', self)
-      
+        self.io = iobag.IO()
         # timer = QtCore.QTimer(self);
         # timer.timeout.connect(self.showIP);
         # timer.start(3000);
@@ -63,7 +58,20 @@ class QMainWindow(QtGui.QMainWindow):
             self.ledon = True
             self.LED(1)
        
-   
+    def Target(self, pos):
+       if pos == 0:
+            self.io.work_lr(1)
+        elif pos == 1:
+            self.io.work_lr(0)           
+        elif pos == 2:
+            self.io.work_lr(2)
+        elif pos == 3:
+            self.io.work_ud(0) 
+        elif pos == 4:
+            self.io.work_ud(2)    
+        print pos, 'arrived'
+        return True
+        
     def GetImgSaveByIdx(self, id, index):
         dir = 'image/%d'%(id + 1)
         if index < 5:
@@ -111,30 +119,22 @@ class QMainWindow(QtGui.QMainWindow):
             return
     def Run(self):
         #清空文件夹
+        
         self.ClearDir()
         #1，2, 4 号激光摄像头到指定位置拍摄
         for index in range(0, 7):
-            if not self.Target(camera1[index]):
+            #三个轴同时运动
+            if not self.Target(index):
                 QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
                 return
+                
             if not self.GetImgSaveByIdx(0, index):
                 QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
                 return
                 
-        for index in range(0, 7):
-            if not self.Target(camera2[index]):
-                QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
-                return
             if not self.GetImgSaveByIdx(1, index):
                 QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
                 return                                                                                                            
-
-        if not P2P(Z, camera4[0][Z], SPD[Z]):QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); return
-        if not P2P(R, camera4[0][R], SPD[R]):QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); return
-        for index in range(0, 7):
-            if not self.Target(camera4[index]):
-                QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
-                return
             if not self.GetImgSaveByIdx(3, index):
                 QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
                 return  
