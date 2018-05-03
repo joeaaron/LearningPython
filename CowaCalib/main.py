@@ -59,7 +59,7 @@ class QMainWindow(QtGui.QMainWindow):
             self.LED(1)
        
     def Target(self, pos):
-       if pos == 0:
+        if pos == 0:
             self.io.work_lr(1)
         elif pos == 1:
             self.io.work_lr(0)           
