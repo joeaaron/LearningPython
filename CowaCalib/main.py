@@ -16,7 +16,7 @@ import numpy as np
 
 import R1Debug, R1Shell
 import scipy.misc
-import iobag
+import IOBag
 from motion import *
 from check import *
 import ip_h3c
@@ -39,7 +39,7 @@ class QMainWindow(QtGui.QMainWindow):
     def __init__(self, *args ):
         super(QMainWindow, self).__init__()   
         self.ui = uic.loadUi('ui/main.ui', self)
-        self.io = iobag.IO()
+        self.io = IOBag.IO()
         # timer = QtCore.QTimer(self);
         # timer.timeout.connect(self.showIP);
         # timer.start(3000);
@@ -119,7 +119,6 @@ class QMainWindow(QtGui.QMainWindow):
             return
     def Run(self):
         #清空文件夹
-        
         self.ClearDir()
         #1，2, 4 号激光摄像头到指定位置拍摄
         for index in range(0, 7):
@@ -340,6 +339,7 @@ class QMainWindow(QtGui.QMainWindow):
             for filename in filenames:
                 f.write(os.path.join(dirpath,filename))
         f.close()
+        
 if __name__ == '__main__':
 
     app = QtGui.QApplication(sys.argv)

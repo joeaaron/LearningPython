@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+ ############################################################
+ #  Created on: 2018.04                                     #
+ #  Author: cowa                                            #
+ #  Email:  aaron.pan@cowarobot.com                         #
+ ############################################################
 import socket, struct , time
 class IO:
     bits = 0x00
