@@ -3,6 +3,7 @@
  ############################################################
  #  Created on: 2018.04                                     #
  #  Author: cowa                                            #
+ #  Update: 2018.05.17
  #  Email:  aaron.pan@cowarobot.com                         #
  ############################################################
 import sys, math, copy, threading, struct, socket, ConfigParser, time, os
@@ -21,35 +22,51 @@ from motion import *
 from check import *
 import ip_h3c
 
+ALLIP = os.listdir('.\\backup')
+ALLIP = [i.replace('.zip', '') for i in ALLIP]
+
 class QMainWindow(QtGui.QMainWindow):
     R1 = None
     tasks = []
     ssh = None
     ledon = False
     image = None
-    io = None
+    cameraLog = ''
+    io = IOBag.IO()
     h3c = ip_h3c.H3CRouter()
     def showIP(self):
         self.ui.ips.clear()
         for i in self.h3c.listHost():
-            item = QtGui.QListWidgetItem(i)
-            current_time = QTime.currentTime()
+            if not '310' in i: continue
+            i = i.split(';')[1:]
+            if i[1] in ALLIP: i.append(u'已标定过')
+            i = '\t'.join(i)
+            item = QtGui.QListWidgetItem(i);
             self.ui.ips.addItem(item)
-            self.ui.ips.addItem(current_time)
+            
+    def SetIP(self):
+        ip = self.ui.ips.currentItem().text()
+        self.ui.IP.setText(ip.split('\t')[0])
+        
     def __init__(self, *args ):
         super(QMainWindow, self).__init__()   
         self.ui = uic.loadUi('ui/main.ui', self)
-        self.io = IOBag.IO()
-        # timer = QtCore.QTimer(self);
-        # timer.timeout.connect(self.showIP);
-        # timer.start(3000);
+        try:
+            #self.LED = lambda flag: set_digital_output([flag, flag, flag]) 
+            self.LED(0)
+        except:
+            QMessageBox.information(self, u"Error", u"LED打开失败", QMessageBox.Yes)
+        '''
+        timer = QtCore.QTimer(self);
+        timer.timeout.connect(self.showIP);
+        timer.start(3000);
         
-        # timer2 = QtCore.QTimer(self);
-        # timer2.timeout.connect(self.CheckLog);
-        # timer2.start(1000); 
+        timer2 = QtCore.QTimer(self);
+        timer2.timeout.connect(self.CheckLog);
+        timer2.start(1000); 
         
-        #self.showIP()
-    
+        self.showIP()
+        '''
     def SwitchLed(self):
         if self.ledon: 
             self.ledon = False
@@ -59,16 +76,23 @@ class QMainWindow(QtGui.QMainWindow):
             self.LED(1)
        
     def Target(self, pos):
+        
         if pos == 0:
-            self.io.work_lr(1)
+            self.io.work_ud(2)
         elif pos == 1:
-            self.io.work_lr(0)           
+            self.io.work_ud(0)           
         elif pos == 2:
-            self.io.work_lr(2)
+            self.io.work_ud(1)
         elif pos == 3:
-            self.io.work_ud(0) 
+            self.io.work_lr(0) 
         elif pos == 4:
-            self.io.work_ud(2)    
+            self.io.work_lr(2)
+        elif pos == 5:
+            self.io.suitcase_lr(0)
+        elif pos == 6:
+            self.io.suitcase_lr(2)
+            
+        time.sleep(2)
         print pos, 'arrived'
         return True
         
@@ -118,6 +142,14 @@ class QMainWindow(QtGui.QMainWindow):
             QMessageBox.information(self, u"错误", u"标定过程完成， 文件传输错误", QMessageBox.Yes)
             return
     def Run(self):
+        '''
+        if not self.Target(0):
+            QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
+            return
+        if not self.Target(2):
+            QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
+            return
+        '''
         #清空文件夹
         self.ClearDir()
         #1，2, 4 号激光摄像头到指定位置拍摄
@@ -137,13 +169,18 @@ class QMainWindow(QtGui.QMainWindow):
             if not self.GetImgSaveByIdx(3, index):
                 QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
                 return  
+                
+            # 拉杆左右转时，保证棋盘格在中间
+            if 4 == index:
+                self.io.work_lr(1)
+                
         #关闭光源
         self.LED(0)
         #运行标定程序
         self.StartCalc()
         
         #回零
-        if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
+        if not self.io.suitcase_lr(1):QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         #bin文件拷贝到文件夹外层
         self.WaitCalc()
         
@@ -151,11 +188,12 @@ class QMainWindow(QtGui.QMainWindow):
         if self.Check():
             QMessageBox.information(self, u"OK", u"标定完成", QMessageBox.Yes)
         #再次检查回零是否成功
-        if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
+        if not self.io.suitcase_lr(1):QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         #打包
         self.Zip()
         #开灯
         self.LED(1)
+        
     def Check(self):
         self.PushFiles()
         lasers = []
@@ -333,7 +371,7 @@ class QMainWindow(QtGui.QMainWindow):
                 if True in map( file.endswith, ('.xml', '.bin', '.txt') ): os.remove( f )
         id = self.R1.getID()
         #backup = time.strftime("backup\\%y.%m.%d %H.%M.zip", time.localtime()) 
-        backup = "backup\\%s.zip"%id
+        backup = "backup\\%s.zip"%id 
         f = zipfile.ZipFile(backup,'w', zipfile.ZIP_DEFLATED)
         for dirpath, dirnames, filenames in os.walk('image'):
             for filename in filenames:

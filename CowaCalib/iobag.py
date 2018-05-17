@@ -11,7 +11,7 @@ class IO:
     def __init__(self):
         
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-        self.s.connect(('192.168.1.75', 502) )
+        self.s.connect(('192.168.1.75', 502))
     def DO(self, bit, _do): 
         if bit <= 8:
             data = struct.pack('B', _do)
@@ -26,40 +26,66 @@ class IO:
         else:
             self.bits = self.bits & ~(1<<bit) 
         
-    #上下有三个液压开关控制
+    #上下有三个液压开关控制5
     def work_ud(self, pos):
-        up = 0
-        down = 1
-        center = 5
+        center = 1
+        up = 5
+        down = 4
+        #下
         if pos == 0:
             self.set(down, 0)
-            self.set(center, 0)
             self.set(up, 1)
-        elif pos == 1:
             self.set(center, 1)
+        elif pos == 1:
+            self.set(down, 0)
             self.set(up, 0)
-            self.set(down, 0)           
+            self.set(center, 0)     
+        #上
         elif pos == 2:
             self.set(up, 0)
-            self.set(center, 0)
+            self.set(center, 1)
             self.set(down, 1)
         elif pos == 3:
             self.set(up, 0)
             self.set(down, 0)
-            self.set(center, 1)
+            self.set(center, 0)
         self.s.send(self.DO(8, self.bits)) 
         time.sleep(3)
         
     #左右只有两个液压开关控制
     def work_lr(self,pos):
-        left = 2
-        right = 4
+        left = 6
+        right = 7
+        #左
         if pos == 0:
             self.set(right, 0)
             self.set(left, 1)
         elif pos == 1:
             self.set(left, 0)
             self.set(right, 0)
+        #右
+        elif pos == 2:
+            self.set(left, 0)
+            self.set(right, 1)
+        elif pos == 3:
+            self.set(left, 0)
+            self.set(right, 0)
+        self.s.send(self.DO(8, self.bits)) 
+        time.sleep(3)
+        
+          
+    #行李箱拉杆左右只有两个液压开关控制
+    def suitcase_lr(self,pos):
+        left = 0
+        right = 2
+        #左
+        if pos == 0:
+            self.set(right, 0)
+            self.set(left, 1)
+        elif pos == 1:
+            self.set(left, 0)
+            self.set(right, 0)
+        #右
         elif pos == 2:
             self.set(left, 0)
             self.set(right, 1)
@@ -69,11 +95,41 @@ class IO:
         self.s.send(self.DO(8, self.bits)) 
         time.sleep(3)
             
-# test
-# io = IO()
+#test
 
-# for i in range(0, 100):
-    # io.work_lr(i % 4)
-    # io.work_ud(i % 4)
-    # time.sleep(1)
+'''
+io = IO()
+
+#up
+io.work_ud(2)
+time.sleep(2)  #延时5s
+
+#down
+io.work_ud(0)
+time.sleep(2)
+
+#middle
+io.work_ud(1)
+time.sleep(2)
+
+#left
+io.work_lr(0)
+time.sleep(2)
+
+#right
+io.work_lr(2)
+time.sleep(2)
+
+#middle
+io.work_lr(1)
+time.sleep(2)
+'''
+
+'''
+for i in range(0, 100):
+    io.work_lr(i % 4)
+    io.work_ud(i % 4)
+    time.sleep(1)
+'''
+
    

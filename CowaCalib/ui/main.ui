@@ -310,8 +310,8 @@
    <slot>Connect()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>740</x>
-     <y>345</y>
+     <x>931</x>
+     <y>335</y>
     </hint>
     <hint type="destinationlabel">
      <x>621</x>
@@ -326,8 +326,8 @@
    <slot>ClearDir()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>340</x>
-     <y>409</y>
+     <x>112</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>93</x>
@@ -342,8 +342,8 @@
    <slot>CalibrateCalc()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>452</x>
-     <y>409</y>
+     <x>112</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>362</x>
@@ -358,8 +358,8 @@
    <slot>Zip()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>563</x>
-     <y>409</y>
+     <x>112</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>522</x>
@@ -374,8 +374,8 @@
    <slot>SwitchLed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
-     <y>409</y>
+     <x>106</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -390,8 +390,8 @@
    <slot>GetLaser()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>173</x>
-     <y>404</y>
+     <x>112</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>-13</x>
@@ -406,12 +406,28 @@
    <slot>ShowImage()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>599</x>
-     <y>384</y>
+     <x>155</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>590</x>
      <y>468</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ips</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SetIP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>955</x>
+     <y>37</y>
     </hint>
    </hints>
   </connection>
@@ -457,5 +473,6 @@
   <slot>GetLaser()</slot>
   <slot>Check()</slot>
   <slot>ShowImage()</slot>
+  <slot>SetIP()</slot>
  </slots>
 </ui>
