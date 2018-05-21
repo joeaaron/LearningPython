@@ -11,29 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>上海弈猫科技</string>
+   <string>COWACALIB</string>
   </property>
   <widget class="QWidget" name="main">
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <item row="0" column="0" rowspan="2" colspan="2">
+    <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>0</number>
@@ -43,6 +28,27 @@
         <string>标定</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="font">
+           <font>
+            <family>Adobe Myungjo Std M</family>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+          </property>
+          <property name="text">
+           <string>回零</string>
+          </property>
+         </widget>
+        </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
@@ -86,32 +92,47 @@
              <widget class="QPushButton" name="pushButton">
               <property name="font">
                <font>
+                <family>Adobe Myungjo Std M</family>
                 <pointsize>18</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+              </property>
               <property name="text">
-               <string>Connect</string>
+               <string>CONNECT</string>
               </property>
              </widget>
             </item>
            </layout>
           </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_8">
-            <property name="font">
-             <font>
-              <family>3ds</family>
-              <pointsize>32</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>RUN</string>
-            </property>
-           </widget>
-          </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_8">
+          <property name="font">
+           <font>
+            <family>3ds</family>
+            <pointsize>32</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:#3e00ba;
+border:1px solid gray;
+border-radius: 10px;
+hover{background-color:#333333;};</string>
+          </property>
+          <property name="text">
+           <string>RUN</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -123,9 +144,6 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QLineEdit" name="echo"/>
-          </item>
-          <item>
            <layout class="QHBoxLayout" name="horizontalLayout_7"/>
           </item>
           <item>
@@ -135,6 +153,12 @@
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
              <widget class="QPushButton" name="pushButton_24">
+              <property name="styleSheet">
+               <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+              </property>
               <property name="text">
                <string>LED开</string>
               </property>
@@ -142,6 +166,12 @@
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_31">
+              <property name="styleSheet">
+               <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+              </property>
               <property name="text">
                <string>获取激光</string>
               </property>
@@ -149,6 +179,12 @@
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_9">
+              <property name="styleSheet">
+               <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+              </property>
               <property name="text">
                <string>清空文件夹</string>
               </property>
@@ -156,6 +192,12 @@
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_10">
+              <property name="styleSheet">
+               <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+              </property>
               <property name="text">
                <string>重新计算</string>
               </property>
@@ -163,6 +205,12 @@
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_11">
+              <property name="styleSheet">
+               <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+              </property>
               <property name="text">
                <string>打包</string>
               </property>
@@ -180,6 +228,12 @@
              <font>
               <pointsize>15</pointsize>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
             </property>
             <property name="text">
              <string>获取图像</string>
@@ -310,8 +364,8 @@
    <slot>Connect()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>931</x>
-     <y>335</y>
+     <x>920</x>
+     <y>324</y>
     </hint>
     <hint type="destinationlabel">
      <x>621</x>
@@ -326,8 +380,8 @@
    <slot>ClearDir()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>90</y>
+     <x>415</x>
+     <y>393</y>
     </hint>
     <hint type="destinationlabel">
      <x>93</x>
@@ -342,8 +396,8 @@
    <slot>CalibrateCalc()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>90</y>
+     <x>559</x>
+     <y>393</y>
     </hint>
     <hint type="destinationlabel">
      <x>362</x>
@@ -358,8 +412,8 @@
    <slot>Zip()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>90</y>
+     <x>703</x>
+     <y>393</y>
     </hint>
     <hint type="destinationlabel">
      <x>522</x>
@@ -374,8 +428,8 @@
    <slot>SwitchLed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>106</x>
-     <y>90</y>
+     <x>121</x>
+     <y>393</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -390,8 +444,8 @@
    <slot>GetLaser()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>90</y>
+     <x>271</x>
+     <y>393</y>
     </hint>
     <hint type="destinationlabel">
      <x>-13</x>
@@ -406,8 +460,8 @@
    <slot>ShowImage()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>155</x>
-     <y>90</y>
+     <x>850</x>
+     <y>250</y>
     </hint>
     <hint type="destinationlabel">
      <x>590</x>
@@ -422,12 +476,28 @@
    <slot>SetIP()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>340</x>
-     <y>82</y>
+     <x>353</x>
+     <y>149</y>
     </hint>
     <hint type="destinationlabel">
      <x>955</x>
      <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Zero()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>475</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>951</x>
+     <y>31</y>
     </hint>
    </hints>
   </connection>

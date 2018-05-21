@@ -3,7 +3,7 @@
  ############################################################
  #  Created on: 2018.04                                     #
  #  Author: cowa                                            #
- #  Update: 2018.05.17
+ #  Update: 2018.05.18
  #  Email:  aaron.pan@cowarobot.com                         #
  ############################################################
 import sys, math, copy, threading, struct, socket, ConfigParser, time, os
@@ -32,18 +32,24 @@ class QMainWindow(QtGui.QMainWindow):
     ledon = False
     image = None
     cameraLog = ''
-    io = IOBag.IO()
+    #io = IOBag.IO()
     h3c = ip_h3c.H3CRouter()
     def showIP(self):
         self.ui.ips.clear()
         for i in self.h3c.listHost():
+            current_time = QTime.currentTime()
+            strTime = current_time.toString("h:m:s ap")
+            qtime = unicode(strTime)  #curerntTime
+            #print strTime
             if not '310' in i: continue
             i = i.split(';')[1:]
             if i[1] in ALLIP: i.append(u'已标定过')
+            else: i.append(u'即将标定')
+        
             i = '\t'.join(i)
             item = QtGui.QListWidgetItem(i);
             self.ui.ips.addItem(item)
-            
+          
     def SetIP(self):
         ip = self.ui.ips.currentItem().text()
         self.ui.IP.setText(ip.split('\t')[0])
@@ -51,12 +57,15 @@ class QMainWindow(QtGui.QMainWindow):
     def __init__(self, *args ):
         super(QMainWindow, self).__init__()   
         self.ui = uic.loadUi('ui/main.ui', self)
+        #转载样示表
+        qss_file = open('ui/qdarkstyle/style.qss').read()
+        self.setStyleSheet(qss_file)
         try:
             #self.LED = lambda flag: set_digital_output([flag, flag, flag]) 
             self.LED(0)
         except:
             QMessageBox.information(self, u"Error", u"LED打开失败", QMessageBox.Yes)
-        '''
+        
         timer = QtCore.QTimer(self);
         timer.timeout.connect(self.showIP);
         timer.start(3000);
@@ -66,7 +75,7 @@ class QMainWindow(QtGui.QMainWindow):
         timer2.start(1000); 
         
         self.showIP()
-        '''
+        
     def SwitchLed(self):
         if self.ledon: 
             self.ledon = False
@@ -74,7 +83,21 @@ class QMainWindow(QtGui.QMainWindow):
         else: 
             self.ledon = True
             self.LED(1)
-       
+            
+    def Zero(self):
+        if self.Move2Zero():
+            QMessageBox.information(self, u"OK", u"回零点完成", QMessageBox.Yes)
+            return True
+        QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes)
+
+    def Move2Zero(self):
+        self.io.work_ud(1)
+        self.io.work_lr(1)
+        self.io.suitcase_lr(1)
+        
+        print 'Zero done'
+        return True   
+        
     def Target(self, pos):
         
         if pos == 0:
@@ -180,7 +203,7 @@ class QMainWindow(QtGui.QMainWindow):
         self.StartCalc()
         
         #回零
-        if not self.io.suitcase_lr(1):QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
+        if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         #bin文件拷贝到文件夹外层
         self.WaitCalc()
         
@@ -188,7 +211,7 @@ class QMainWindow(QtGui.QMainWindow):
         if self.Check():
             QMessageBox.information(self, u"OK", u"标定完成", QMessageBox.Yes)
         #再次检查回零是否成功
-        if not self.io.suitcase_lr(1):QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
+        if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         #打包
         self.Zip()
         #开灯
@@ -370,7 +393,7 @@ class QMainWindow(QtGui.QMainWindow):
                 f = os.path.join( path, file )  
                 if True in map( file.endswith, ('.xml', '.bin', '.txt') ): os.remove( f )
         id = self.R1.getID()
-        #backup = time.strftime("backup\\%y.%m.%d %H.%M.zip", time.localtime()) 
+        #backup = time.strftime("backup \\%y.%m.%d %H.%M.zip", time.localtime()) 
         backup = "backup\\%s.zip"%id 
         f = zipfile.ZipFile(backup,'w', zipfile.ZIP_DEFLATED)
         for dirpath, dirnames, filenames in os.walk('image'):

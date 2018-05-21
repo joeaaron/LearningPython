@@ -94,11 +94,21 @@ class IO:
             self.set(right, 0)
         self.s.send(self.DO(8, self.bits)) 
         time.sleep(3)
-            
+'''            
 #test
-
-'''
 io = IO()
+
+#left
+io.suitcase_lr(0)
+time.sleep(2)
+
+#right
+#io.suitcase_lr(2)
+#time.sleep(2)
+
+#middle
+#io.suitcase_lr(1)
+#time.sleep(2)
 
 #up
 io.work_ud(2)
