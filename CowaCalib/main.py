@@ -32,7 +32,7 @@ class QMainWindow(QtGui.QMainWindow):
     ledon = False
     image = None
     cameraLog = ''
-    #io = IOBag.IO()
+    #io = IOBag.IO()  #气缸控制
     h3c = ip_h3c.H3CRouter()
     def showIP(self):
         self.ui.ips.clear()
@@ -57,7 +57,7 @@ class QMainWindow(QtGui.QMainWindow):
     def __init__(self, *args ):
         super(QMainWindow, self).__init__()   
         self.ui = uic.loadUi('ui/main.ui', self)
-        #转载样示表
+        #装载样示表
         qss_file = open('ui/qdarkstyle/style.qss').read()
         self.setStyleSheet(qss_file)
         try:
