@@ -123,19 +123,23 @@ class QMainWindow(QtGui.QMainWindow):
         dir = 'image/%d'%(id + 1)
         if index < 5:
             self.LED(1); time.sleep(1)
-            if not self.GetImage(id + 0, '%s/x%d.bmp'%(dir, index * 2 + 1)):
-                return False
+            for i in range(0, 3):
+                if not self.GetImage(id[i] + 0, '%s/x%d.bmp'%(dir, index * 2 + 1)):
+                    return False
             self.LED(0); time.sleep(1)
-            if not self.GetImage(id + 8, '%s/x%d.bmp'%(dir, index * 2 + 2)):
-                return False
+            for j in range(0, 3):   
+                if not self.GetImage(id[j] + 8, '%s/x%d.bmp'%(dir, index * 2 + 2)):
+                    return False
         elif index == 5:
             self.LED(1); time.sleep(1)
-            if not self.GetImage(id, '%s/x%d.bmp'%(dir, 11)):
-                return False
+            for m in range(0, 3): 
+                if not self.GetImage(id[m], '%s/x%d.bmp'%(dir, 11)):
+                    return False
         elif index == 6:
             self.LED(1); time.sleep(1)
-            if not self.GetImage(id, '%s/x%d.bmp'%(dir, 12)):
-                return False
+            for n in range(0, 3): 
+                if not self.GetImage(id[n], '%s/x%d.bmp'%(dir, 12)):
+                    return False
         return True
     def PushFiles(self):
         try:
@@ -181,18 +185,12 @@ class QMainWindow(QtGui.QMainWindow):
             if not self.Target(index):
                 QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
                 return
-                
-            if not self.GetImgSaveByIdx(0, index):
+      
+            if not self.GetImgSaveByIdx([0,1,3], index, ledon):
                 QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
                 return
-                
-            if not self.GetImgSaveByIdx(1, index):
-                QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
-                return                                                                                                            
-            if not self.GetImgSaveByIdx(3, index):
-                QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
-                return  
-                
+         
+      
             # 拉杆左右转时，保证棋盘格在中间
             if 4 == index:
                 self.io.work_lr(1)
