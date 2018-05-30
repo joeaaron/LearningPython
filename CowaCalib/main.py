@@ -3,7 +3,7 @@
  ############################################################
  #  Created on: 2018.04                                     #
  #  Author: cowa                                            #
- #  Update: 2018.05.18
+ #  Update: 2018.05.30
  #  Email:  aaron.pan@cowarobot.com                         #
  ############################################################
 import sys, math, copy, threading, struct, socket, ConfigParser, time, os
@@ -66,6 +66,7 @@ class QMainWindow(QtGui.QMainWindow):
         except:
             QMessageBox.information(self, u"Error", u"LED打开失败", QMessageBox.Yes)
         
+        '''
         timer = QtCore.QTimer(self);
         timer.timeout.connect(self.showIP);
         timer.start(3000);
@@ -75,7 +76,7 @@ class QMainWindow(QtGui.QMainWindow):
         timer2.start(1000); 
         
         self.showIP()
-        
+        '''
     def SwitchLed(self):
         if self.ledon: 
             self.ledon = False
@@ -84,6 +85,27 @@ class QMainWindow(QtGui.QMainWindow):
             self.ledon = True
             self.LED(1)
             
+    def ChessbUP(self):
+        self.Target(0)
+    
+    def ChessbDOWN(self):
+        self.Target(1)
+        
+    def ChessbLEFT(self):
+        self.Target(3)
+        
+    def ChessbRIGHT(self):
+        self.Target(4)     
+        
+    def RAdd(self):
+        self.Target(5)
+        
+    def RDec(self):
+        self.Target(6)
+        
+    def RAdd90(self):
+        self.io.suitcase_90(1)
+        
     def Zero(self):
         if self.Move2Zero():
             QMessageBox.information(self, u"OK", u"回零点完成", QMessageBox.Yes)
@@ -94,7 +116,7 @@ class QMainWindow(QtGui.QMainWindow):
         self.io.work_ud(1)
         self.io.work_lr(1)
         self.io.suitcase_lr(1)
-        
+        self.io.suitcase_90(0)
         print 'Zero done'
         return True   
         
@@ -186,7 +208,22 @@ class QMainWindow(QtGui.QMainWindow):
                 QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
                 return
       
-            if not self.GetImgSaveByIdx([0,1,3], index, ledon):
+            if not self.GetImgSaveByIdx([0], index, ledon):
+                QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
+                return
+         
+      
+            # 拉杆左右转时，保证棋盘格在中间
+            if 4 == index:
+                self.io.work_lr(1)
+                
+        for index in range(0, 7):
+            #三个轴同时运动
+            if not self.Target(index):
+                QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
+                return
+      
+            if not self.GetImgSaveByIdx([1,3], index, ledon):
                 QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
                 return
          

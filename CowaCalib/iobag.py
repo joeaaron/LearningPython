@@ -94,8 +94,22 @@ class IO:
             self.set(right, 0)
         self.s.send(self.DO(8, self.bits)) 
         time.sleep(3)
-'''            
+    
+    #行李箱拉杆旋转90°
+    def suitcase_90(self,pos):
+        rotate = 3
+        # 旋转
+        if pos == 1:
+            self.set(rotate, 1)
+        # 不旋转
+        elif pos == 0:
+            self.set(rotate, 0)
+     
+        self.s.send(self.DO(8, self.bits)) 
+        time.sleep(3)
+           
 #test
+'''
 io = IO()
 
 #left
@@ -103,13 +117,16 @@ io.suitcase_lr(0)
 time.sleep(2)
 
 #right
-#io.suitcase_lr(2)
-#time.sleep(2)
+io.suitcase_lr(2)
+time.sleep(2)
 
-#middle
-#io.suitcase_lr(1)
-#time.sleep(2)
+#middle 
+io.suitcase_lr(1)
+time.sleep(2)
 
+io.suitcase_90(1)
+io.suitcase_90(0)
+ 
 #up
 io.work_ud(2)
 time.sleep(2)  #延时5s

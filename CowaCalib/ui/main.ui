@@ -21,7 +21,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -222,7 +222,7 @@ border-radius: 10px;
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
+          <item row="4" column="0">
            <widget class="QPushButton" name="pushButton_32">
             <property name="font">
              <font>
@@ -230,17 +230,17 @@ border-radius: 10px;
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:#16A085;
+             <string notr="true">background-color:#3e00ba;
 border:1px solid gray;
 border-radius: 10px;
-</string>
+hover{background-color:#333333;};</string>
             </property>
             <property name="text">
              <string>获取图像</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
+          <item row="4" column="1">
            <widget class="QComboBox" name="camIndex">
             <property name="font">
              <font>
@@ -277,6 +277,146 @@ border-radius: 10px;
               <string>12</string>
              </property>
             </item>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="font">
+             <font>
+              <family>Adobe Myungjo Std M</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+            </property>
+            <property name="text">
+             <string>UP</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="pushButton_7">
+            <property name="font">
+             <font>
+              <family>Adobe Myungjo Std M</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+            </property>
+            <property name="text">
+             <string>R+</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="font">
+             <font>
+              <family>Adobe Myungjo Std M</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+            </property>
+            <property name="text">
+             <string>RIGHT</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="font">
+             <font>
+              <family>Adobe Myungjo Std M</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+            </property>
+            <property name="text">
+             <string>LEFT</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="font">
+             <font>
+              <family>Adobe Myungjo Std M</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+            </property>
+            <property name="text">
+             <string>DOWN</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="pushButton_12">
+            <property name="font">
+             <font>
+              <family>Adobe Myungjo Std M</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+            </property>
+            <property name="text">
+             <string>R-</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QPushButton" name="pushButton_13">
+            <property name="font">
+             <font>
+              <family>Adobe Myungjo Std M</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#16A085;
+border:1px solid gray;
+border-radius: 10px;
+</string>
+            </property>
+            <property name="text">
+             <string>R90</string>
+            </property>
            </widget>
           </item>
          </layout>
@@ -348,8 +488,8 @@ border-radius: 10px;
    <slot>Run()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>308</x>
-     <y>392</y>
+     <x>101</x>
+     <y>341</y>
     </hint>
     <hint type="destinationlabel">
      <x>307</x>
@@ -364,8 +504,8 @@ border-radius: 10px;
    <slot>Connect()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>920</x>
-     <y>324</y>
+     <x>854</x>
+     <y>325</y>
     </hint>
     <hint type="destinationlabel">
      <x>621</x>
@@ -460,8 +600,8 @@ border-radius: 10px;
    <slot>ShowImage()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>850</x>
-     <y>250</y>
+     <x>857</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>590</x>
@@ -476,8 +616,8 @@ border-radius: 10px;
    <slot>SetIP()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>353</x>
-     <y>149</y>
+     <x>101</x>
+     <y>116</y>
     </hint>
     <hint type="destinationlabel">
      <x>955</x>
@@ -492,12 +632,124 @@ border-radius: 10px;
    <slot>Zero()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>475</x>
-     <y>88</y>
+     <x>101</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
      <x>951</x>
      <y>31</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>RAdd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>805</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>957</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_12</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>RDec()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>900</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>962</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>RAdd90()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>823</x>
+     <y>279</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>962</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ChessbUP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>797</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>955</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ChessbDOWN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>880</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>952</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ChessbLEFT()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>824</x>
+     <y>162</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>949</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ChessbRIGHT()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>878</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>956</x>
+     <y>173</y>
     </hint>
    </hints>
   </connection>
@@ -544,5 +796,11 @@ border-radius: 10px;
   <slot>Check()</slot>
   <slot>ShowImage()</slot>
   <slot>SetIP()</slot>
+  <slot>ChessbUP()</slot>
+  <slot>ChessbDOWN()</slot>
+  <slot>ChessbLEFT()</slot>
+  <slot>ChessbRIGHT()</slot>
+  <slot>slot1()</slot>
+  <slot>RAdd90()</slot>
  </slots>
 </ui>
