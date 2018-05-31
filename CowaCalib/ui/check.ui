@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>激光质检</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1" columnstretch="1,1,1">
+  <layout class="QGridLayout" name="gridLayout" rowstretch="1" columnstretch="1">
    <property name="leftMargin">
     <number>1</number>
    </property>
@@ -31,30 +31,6 @@
    </property>
    <item row="0" column="0">
     <widget class="GraphWidget" name="graphicsView_1"/>
-   </item>
-   <item row="0" column="1">
-    <widget class="GraphWidget" name="graphicsView_4"/>
-   </item>
-   <item row="0" column="2">
-    <widget class="GraphWidget" name="graphicsView_7"/>
-   </item>
-   <item row="1" column="0">
-    <widget class="GraphWidget" name="graphicsView_2"/>
-   </item>
-   <item row="1" column="1">
-    <widget class="GraphWidget" name="graphicsView_5"/>
-   </item>
-   <item row="1" column="2">
-    <widget class="GraphWidget" name="graphicsView_8"/>
-   </item>
-   <item row="2" column="0">
-    <widget class="GraphWidget" name="graphicsView_3"/>
-   </item>
-   <item row="2" column="1">
-    <widget class="GraphWidget" name="graphicsView_6"/>
-   </item>
-   <item row="2" column="2">
-    <widget class="GraphWidget" name="graphicsView_9"/>
    </item>
   </layout>
  </widget>

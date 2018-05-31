@@ -5,26 +5,24 @@ from PyQt4.QtGui import QMessageBox, QInputDialog, QPlainTextEdit, QPalette, QTe
 import sys, pickle
 
 from component import *
-RECT = [(-0.5, 0.35, 0.5, 0.35), (-0.5, 0.35, 0.5, 0.35), # small pan
-        (-0.5, -0.5, -0.5, 0.5), (-0.5, -0.5, -0.5, 0.5),
-        (0.23, -0.5, 0.23, 0.5), (0.23, -0.5, 0.23, 0.5),
-        (0.4, 0, 0, 0.4), (-0.65, 0, -0.2, 0.45),
-        (-1, 1.45, 1, 1.45),   # big pan
+RECT = [(-1, 1.45, 1, 1.45),   # big pan
         (-1.45, -1, -1.45, 1),
         (1.45, -1, 1.45, 1),
         (1.8, 0, 0, 1.8), (-1.8, 0, -0.2, 1.8),
         ]
 ROTATE=[0, 0, 90, 90, 90, 90, 0, 0,      0, 90, 0, 0, 0]
-VIEW=[1, 1, 2, 2, 3, 3, 4, 4,     5, 6, 7, 8, 9]
+VIEW=[1,1,1,1,1]
 class QCheck(QtGui.QDialog):
     def __init__(self, parent = None, lasers = None ):
         super(QCheck, self).__init__()   
         self.ui = uic.loadUi('ui/check.ui', self)
         if not lasers:
-            self.lasers = pickle.load( open("image\\check.dat", "rb"))
+            #self.lasers = pickle.load( open("image\\check.dat", "rb"))
+            pass
         else:
             self.lasers = lasers
-        for i in range(0, len(self.lasers)):
+        #for i in range(0, len(self.lasers)):
+        for i in range(0, 5):
             view = self.ui.__dict__['graphicsView_%d'%(VIEW[i])]
             
             rect = RECT[i]
@@ -41,11 +39,13 @@ class QCheck(QtGui.QDialog):
             y2 = max(rect[1], rect[3])
             rect = QtCore.QRectF(QtCore.QPointF(x1 - 0.2, y1 - 0.2), QtCore.QPointF(x2 + 0.2, y2 + 0.2))
             print rect
+            '''
             if view.scan:
                 view.ScanHandler2(self.lasers[i], rect)
             else:
                 view.ScanHandler(self.lasers[i], rect)
                 view.rotate(ROTATE[i])
+            '''
         self.setWindowState(Qt.WindowMaximized)
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)

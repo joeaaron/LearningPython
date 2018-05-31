@@ -32,7 +32,7 @@ class QMainWindow(QtGui.QMainWindow):
     ledon = False
     image = None
     cameraLog = ''
-    #io = IOBag.IO()  #气缸控制
+    io = IOBag.IO()  #气缸控制
     h3c = ip_h3c.H3CRouter()
     def showIP(self):
         self.ui.ips.clear()
@@ -61,12 +61,18 @@ class QMainWindow(QtGui.QMainWindow):
         qss_file = open('ui/qdarkstyle/style.qss').read()
         self.setStyleSheet(qss_file)
         try:
-            #self.LED = lambda flag: set_digital_output([flag, flag, flag]) 
+            self.LED = lambda flag: self.io.digital_output(flag) 
             self.LED(0)
         except:
             QMessageBox.information(self, u"Error", u"LED打开失败", QMessageBox.Yes)
+            
+        try:
+            self.ROT = lambda sig: self.io.suitcase_90(sig) 
+            self.ROT(0)
+        except:
+            QMessageBox.information(self, u"Error", u"旋转90°失败", QMessageBox.Yes)
         
-        '''
+        
         timer = QtCore.QTimer(self);
         timer.timeout.connect(self.showIP);
         timer.start(3000);
@@ -76,7 +82,7 @@ class QMainWindow(QtGui.QMainWindow):
         timer2.start(1000); 
         
         self.showIP()
-        '''
+        
     def SwitchLed(self):
         if self.ledon: 
             self.ledon = False
@@ -85,17 +91,26 @@ class QMainWindow(QtGui.QMainWindow):
             self.ledon = True
             self.LED(1)
             
+    def ChessbMid(self):
+        self.Target(1)
+        
+    def ChessbMid2(self):
+        self.io.work_lr(1)
+        
     def ChessbUP(self):
         self.Target(0)
     
     def ChessbDOWN(self):
-        self.Target(1)
+        self.Target(2)
         
     def ChessbLEFT(self):
         self.Target(3)
         
     def ChessbRIGHT(self):
-        self.Target(4)     
+        self.Target(4)  
+        
+    def SuitMid(self):
+        self.io.suitcase_lr(1) 
         
     def RAdd(self):
         self.Target(5)
@@ -104,7 +119,12 @@ class QMainWindow(QtGui.QMainWindow):
         self.Target(6)
         
     def RAdd90(self):
-        self.io.suitcase_90(1)
+        if self.rot: 
+            self.rot = False
+            self.ROT(0)
+        else: 
+            self.rot = True
+            self.ROT(1)
         
     def Zero(self):
         if self.Move2Zero():
@@ -123,11 +143,11 @@ class QMainWindow(QtGui.QMainWindow):
     def Target(self, pos):
         
         if pos == 0:
-            self.io.work_ud(2)
+            self.io.work_ud(0)
         elif pos == 1:
-            self.io.work_ud(0)           
+            self.io.work_ud(1)           
         elif pos == 2:
-            self.io.work_ud(1)
+            self.io.work_ud(2)
         elif pos == 3:
             self.io.work_lr(0) 
         elif pos == 4:
@@ -137,7 +157,7 @@ class QMainWindow(QtGui.QMainWindow):
         elif pos == 6:
             self.io.suitcase_lr(2)
             
-        time.sleep(2)
+        #time.sleep(2)
         print pos, 'arrived'
         return True
         
@@ -145,24 +165,54 @@ class QMainWindow(QtGui.QMainWindow):
         dir = 'image/%d'%(id + 1)
         if index < 5:
             self.LED(1); time.sleep(1)
-            for i in range(0, 3):
-                if not self.GetImage(id[i] + 0, '%s/x%d.bmp'%(dir, index * 2 + 1)):
-                    return False
+            if not self.GetImage(id + 0, '%s/x%d.bmp'%(dir, index * 2 + 1)):
+                return False
+                
             self.LED(0); time.sleep(1)
-            for j in range(0, 3):   
-                if not self.GetImage(id[j] + 8, '%s/x%d.bmp'%(dir, index * 2 + 2)):
-                    return False
+            if not self.GetImage(id + 8, '%s/x%d.bmp'%(dir, index * 2 + 2)):
+                return False
         elif index == 5:
             self.LED(1); time.sleep(1)
-            for m in range(0, 3): 
-                if not self.GetImage(id[m], '%s/x%d.bmp'%(dir, 11)):
-                    return False
+             
+            if not self.GetImage(id, '%s/x%d.bmp'%(dir, 11)):
+                return False
         elif index == 6:
             self.LED(1); time.sleep(1)
-            for n in range(0, 3): 
-                if not self.GetImage(id[n], '%s/x%d.bmp'%(dir, 12)):
+             
+            if not self.GetImage(id, '%s/x%d.bmp'%(dir, 12)):
+                return False
+        return True
+        
+    def GetImgSaveByIdxPro(self, id, index):    
+        if index < 5:
+            self.LED(1); time.sleep(1)
+            for i in range(0, len(id)):
+                dir = 'image/%d'%(id[i] + 1)
+                if not self.GetImage(id[i] + 0, '%s/x%d.bmp'%(dir, index * 2 + 1)):
+                    return False
+                   
+            self.LED(0); time.sleep(1)
+            for i in range(0, len(id)):
+                dir = 'image/%d'%(id[i] + 1)
+                if not self.GetImage(id[i] + 8, '%s/x%d.bmp'%(dir, index * 2 + 2)):
+                    return False
+                
+        elif index == 5:
+            self.LED(1); time.sleep(1)
+             
+            for i in range(0, len(id)):
+                dir = 'image/%d'%(id[i] + 1)
+                if not self.GetImage(id[i] + 0, '%s/x%d.bmp'%(dir, 11)):
+                    return False
+                
+        elif index == 6:
+            self.LED(1); time.sleep(1)
+            for i in range(0, len(id)):
+                dir = 'image/%d'%(id[i] + 1)
+                if not self.GetImage(id[i] + 0, '%s/x%d.bmp'%(dir, 12)):
                     return False
         return True
+        
     def PushFiles(self):
         try:
             print 'file 1 transfering'
@@ -190,6 +240,28 @@ class QMainWindow(QtGui.QMainWindow):
         except:
             QMessageBox.information(self, u"错误", u"标定过程完成， 文件传输错误", QMessageBox.Yes)
             return
+            
+    def GetBackToNormal(self, index):
+        # 棋盘格左右转时，保证棋盘格在中间
+        if 2 == index:
+            self.io.work_ud(1)
+            
+        elif 3 == index:
+            self.io.work_lr(1) 
+            
+        # 拉杆左右转时，保证棋盘格在中间
+        elif 4 == index:
+            self.io.work_lr(1)
+        
+        elif 5 == index:
+            self.io.suitcase_lr(1)
+            
+        elif 6 == index:
+            self.io.suitcase_lr(1)
+            
+        print 'normal pos arrived'
+        return True   
+        
     def Run(self):
         '''
         if not self.Target(0):
@@ -207,30 +279,33 @@ class QMainWindow(QtGui.QMainWindow):
             if not self.Target(index):
                 QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
                 return
-      
-            if not self.GetImgSaveByIdx([0], index, ledon):
+            
+            if not self.GetImgSaveByIdxPro([0], index):
                 QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
                 return
-         
-      
-            # 拉杆左右转时，保证棋盘格在中间
-            if 4 == index:
-                self.io.work_lr(1)
                 
+            if not self.GetBackToNormal(index):
+                QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
+                return
+                
+     
+        # self.io.suitcase_90(1)        #旋转90°
+        
+        time.sleep(10)
+        
         for index in range(0, 7):
             #三个轴同时运动
             if not self.Target(index):
                 QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
                 return
-      
-            if not self.GetImgSaveByIdx([1,3], index, ledon):
+            
+            if not self.GetImgSaveByIdxPro([1, 3], index):
                 QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
                 return
-         
-      
-            # 拉杆左右转时，保证棋盘格在中间
-            if 4 == index:
-                self.io.work_lr(1)
+                
+            if not self.GetBackToNormal(index):
+                QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
+                return
                 
         #关闭光源
         self.LED(0)
@@ -241,7 +316,9 @@ class QMainWindow(QtGui.QMainWindow):
         if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         #bin文件拷贝到文件夹外层
         self.WaitCalc()
+       
         
+        '''
         #标定结果质检
         if self.Check():
             QMessageBox.information(self, u"OK", u"标定完成", QMessageBox.Yes)
@@ -251,22 +328,18 @@ class QMainWindow(QtGui.QMainWindow):
         self.Zip()
         #开灯
         self.LED(1)
-        
+        '''
     def Check(self):
         self.PushFiles()
-        lasers = []
-        for pos in LaserTestPos:
-            if not self.Target(pos):
-                QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
-                return False
-            try:
-                laser = self.R1.requestLaser()
-            except:
-                laser = ''
-            if not len(laser):
-                QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
-                return False
-            lasers.append(laser)
+        
+        try:
+            lasers = self.R1.requestLaser()
+        except:
+            lasers = ''
+        if not len(lasers):
+            QMessageBox.information(self, u"错误", u"箱子连接错误", QMessageBox.Yes); 
+            return False
+        # 将采集到的激光写入文件  
         pickle.dump(lasers, open("image\\check.dat", "wb"))
         
         print u'开始质检'

@@ -25,36 +25,100 @@ class IO:
             self.bits = self.bits | (1<<bit)
         else:
             self.bits = self.bits & ~(1<<bit) 
-        
-    #上下有三个液压开关控制5
+    
+    '''
+    #上下有三个液压开关控制
     def work_ud(self, pos):
         center = 1
         up = 5
         down = 4
-        #下
-        if pos == 0:
-            self.set(down, 0)
-            self.set(up, 1)
-            self.set(center, 1)
-        elif pos == 1:
-            self.set(down, 0)
-            self.set(up, 0)
-            self.set(center, 0)     
         #上
+        if pos == 0:
+            
+            self.set(up, 1)
+            self.set(down, 0)    
+           # time.sleep(5)
+           
+            self.set(center, 1)
+           
+        elif pos == 1:
+            self.set(center, 0) 
+            self.set(down, 0)
+            self.set(up, 0)            
+        #下
         elif pos == 2:
             self.set(up, 0)
-            self.set(center, 1)
             self.set(down, 1)
+            time.sleep(5)
+            self.set(center, 1)
+            
         elif pos == 3:
+            self.set(center, 0)
             self.set(up, 0)
             self.set(down, 0)
-            self.set(center, 0)
+           
+        self.s.send(self.DO(8, self.bits)) 
+        time.sleep(3)
+    '''
+    #上下液压开关控制
+    def ud(self, pos):
+        up = 5
+        down = 4
+        #上
+        if pos == 0:
+            
+            self.set(up, 1)
+            self.set(down, 0)    
+           
+        elif pos == 1:
+ 
+            self.set(down, 0)
+            self.set(up, 0)            
+        #下
+        elif pos == 2:
+            self.set(up, 0)
+            self.set(down, 1)
+                   
+        elif pos == 3:   
+            self.set(up, 0)
+            self.set(down, 0)
+           
         self.s.send(self.DO(8, self.bits)) 
         time.sleep(3)
         
+    #中间液压开关控制
+    def mid(self,pos):
+        center = 1
+        if pos == 1:
+            self.set(center, 1)
+       
+        elif pos == 0:
+            self.set(center, 0)
+     
+        self.s.send(self.DO(8, self.bits)) 
+        time.sleep(1)
+    
+    def work_ud(self,pos):
+        #上
+        if pos == 0: 
+            self.ud(0)
+            self.mid(1)    
+           
+        elif pos == 1:
+            self.ud(1)
+            self.mid(0)              
+        #下
+        elif pos == 2:
+            self.ud(2)
+            self.mid(1)
+                   
+        elif pos == 3:   
+            self.ud(3)
+            self.mid(0) 
+            
     #左右只有两个液压开关控制
     def work_lr(self,pos):
-        left = 6
+        left = 3
         right = 7
         #左
         if pos == 0:
@@ -107,10 +171,43 @@ class IO:
      
         self.s.send(self.DO(8, self.bits)) 
         time.sleep(3)
+        
+    #红外补光灯的亮灭
+    def digital_output(self,signal):
+        led = 6
+        # 亮
+        if signal == 1:
+            self.set(led, 1)
+        # 灭
+        elif signal == 0:
+            self.set(led, 0)
+     
+        self.s.send(self.DO(8, self.bits)) 
+        time.sleep(1)
            
 #test
 '''
 io = IO()
+
+#up
+io.work_ud(0)
+time.sleep(2)
+
+#middle
+io.work_ud(1)
+time.sleep(2)
+
+#down
+io.work_ud(2)
+time.sleep(2)  #延时5s
+
+#middle
+io.work_ud(1)
+time.sleep(2)
+
+
+io.digital_output(1)
+io.digital_output(0)
 
 #left
 io.suitcase_lr(0)
@@ -127,17 +224,7 @@ time.sleep(2)
 io.suitcase_90(1)
 io.suitcase_90(0)
  
-#up
-io.work_ud(2)
-time.sleep(2)  #延时5s
 
-#down
-io.work_ud(0)
-time.sleep(2)
-
-#middle
-io.work_ud(1)
-time.sleep(2)
 
 #left
 io.work_lr(0)
