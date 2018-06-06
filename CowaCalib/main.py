@@ -3,7 +3,7 @@
  ############################################################
  #  Created on: 2018.04                                     #
  #  Author: cowa                                            #
- #  Update: 2018.05.30
+ #  Update: 2018.05.31
  #  Email:  aaron.pan@cowarobot.com                         #
  ############################################################
 import sys, math, copy, threading, struct, socket, ConfigParser, time, os
@@ -30,6 +30,7 @@ class QMainWindow(QtGui.QMainWindow):
     tasks = []
     ssh = None
     ledon = False
+    rot = False
     image = None
     cameraLog = ''
     io = IOBag.IO()  #气缸控制
@@ -47,7 +48,7 @@ class QMainWindow(QtGui.QMainWindow):
             else: i.append(u'即将标定')
         
             i = '\t'.join(i)
-            item = QtGui.QListWidgetItem(i);
+            item = QtGui.QListWidgetItem(i); 
             self.ui.ips.addItem(item)
           
     def SetIP(self):
@@ -273,7 +274,7 @@ class QMainWindow(QtGui.QMainWindow):
         '''
         #清空文件夹
         self.ClearDir()
-        #1，2, 4 号激光摄像头到指定位置拍摄
+        #1号激光摄像头到指定位置拍摄
         for index in range(0, 7):
             #三个轴同时运动
             if not self.Target(index):
@@ -289,10 +290,11 @@ class QMainWindow(QtGui.QMainWindow):
                 return
                 
      
-        # self.io.suitcase_90(1)        #旋转90°
+        self.io.suitcase_90(1)        #旋转90°,更换控制器后取消注释2018-06-01
         
-        time.sleep(10)
+        #time.sleep(10)
         
+        # 2, 4 号激光摄像头到指定位置拍摄
         for index in range(0, 7):
             #三个轴同时运动
             if not self.Target(index):
@@ -316,7 +318,7 @@ class QMainWindow(QtGui.QMainWindow):
         if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         #bin文件拷贝到文件夹外层
         self.WaitCalc()
-       
+        self.PushFiles()
         
         '''
         #标定结果质检
@@ -481,10 +483,11 @@ class QMainWindow(QtGui.QMainWindow):
         shutil.copy('image\\1\\transformationTable.bin', 'image\\transformationTable1.bin')
         shutil.copy('image\\2\\transformationTable.bin', 'image\\transformationTable2.bin')
         shutil.copy('image\\4\\transformationTable.bin', 'image\\transformationTable4.bin')
-
+        
     def CalibrateCalc(self):
         self.StartCalc()
         self.WaitCalc() 
+        self.PushFiles()
         
     def ClearDir(self):
         try:shutil.rmtree('image')

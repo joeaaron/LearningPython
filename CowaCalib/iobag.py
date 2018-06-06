@@ -12,20 +12,23 @@ class IO:
         
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
         self.s.connect(('192.168.1.75', 502))
+        
+    def AO(self, ch, v): 
+        d = '\x00\x00\x00\x00\x00' + '\x06' + '\x01\x06' + struct.pack('>HH', ch, v)
+        self.s.send(d)
+
     def DO(self, bit, _do): 
         if bit <= 8:
             data = struct.pack('B', _do)
         elif bit <= 16:
-            data = struct.pack('H', _do)
+            data = struct.pack('<H', _do)
         return '\x00\x00\x00\x00\x00' + chr(len(data) + 7) + '\x01\x0F\x00\x00\x00' + chr(bit) + '\x01' + data
-    
-    #start
+        
     def set(self, bit, flag):
-        if flag:
-            self.bits = self.bits | (1<<bit)
-        else:
-            self.bits = self.bits & ~(1<<bit) 
-    
+        if not flag: self.bits = self.bits & ~(1<<bit) 
+        else: self.bits = self.bits | (1<<bit)
+        self.s.send(self.DO(16, self.bits))
+
     '''
     #上下有三个液压开关控制
     def work_ud(self, pos):
@@ -62,8 +65,8 @@ class IO:
     '''
     #上下液压开关控制
     def ud(self, pos):
-        up = 5
-        down = 4
+        up = 9
+        down = 8
         #上
         if pos == 0:
             
@@ -83,19 +86,19 @@ class IO:
             self.set(up, 0)
             self.set(down, 0)
            
-        self.s.send(self.DO(8, self.bits)) 
+        
         time.sleep(3)
         
     #中间液压开关控制
     def mid(self,pos):
-        center = 1
+        center = 0
         if pos == 1:
             self.set(center, 1)
        
         elif pos == 0:
             self.set(center, 0)
      
-        self.s.send(self.DO(8, self.bits)) 
+        
         time.sleep(1)
     
     def work_ud(self,pos):
@@ -118,29 +121,7 @@ class IO:
             
     #左右只有两个液压开关控制
     def work_lr(self,pos):
-        left = 3
-        right = 7
-        #左
-        if pos == 0:
-            self.set(right, 0)
-            self.set(left, 1)
-        elif pos == 1:
-            self.set(left, 0)
-            self.set(right, 0)
-        #右
-        elif pos == 2:
-            self.set(left, 0)
-            self.set(right, 1)
-        elif pos == 3:
-            self.set(left, 0)
-            self.set(right, 0)
-        self.s.send(self.DO(8, self.bits)) 
-        time.sleep(3)
-        
-          
-    #行李箱拉杆左右只有两个液压开关控制
-    def suitcase_lr(self,pos):
-        left = 0
+        left = 11
         right = 2
         #左
         if pos == 0:
@@ -156,12 +137,34 @@ class IO:
         elif pos == 3:
             self.set(left, 0)
             self.set(right, 0)
-        self.s.send(self.DO(8, self.bits)) 
+      
+        time.sleep(3)
+        
+          
+    #行李箱拉杆左右只有两个液压开关控制
+    def suitcase_lr(self,pos):
+        left = 1
+        right = 3
+        #左
+        if pos == 0:
+            self.set(right, 0)
+            self.set(left, 1)
+        elif pos == 1:
+            self.set(left, 0)
+            self.set(right, 0)
+        #右
+        elif pos == 2:
+            self.set(left, 0)
+            self.set(right, 1)
+        elif pos == 3:
+            self.set(left, 0)
+            self.set(right, 0)
+ 
         time.sleep(3)
     
     #行李箱拉杆旋转90°
     def suitcase_90(self,pos):
-        rotate = 3
+        rotate = 4
         # 旋转
         if pos == 1:
             self.set(rotate, 1)
@@ -169,12 +172,12 @@ class IO:
         elif pos == 0:
             self.set(rotate, 0)
      
-        self.s.send(self.DO(8, self.bits)) 
+      
         time.sleep(3)
         
     #红外补光灯的亮灭
     def digital_output(self,signal):
-        led = 6
+        led = 10
         # 亮
         if signal == 1:
             self.set(led, 1)
@@ -182,12 +185,14 @@ class IO:
         elif signal == 0:
             self.set(led, 0)
      
-        self.s.send(self.DO(8, self.bits)) 
         time.sleep(1)
            
 #test
+
 '''
 io = IO()
+
+
 
 #up
 io.work_ud(0)
@@ -206,8 +211,6 @@ io.work_ud(1)
 time.sleep(2)
 
 
-io.digital_output(1)
-io.digital_output(0)
 
 #left
 io.suitcase_lr(0)
@@ -224,7 +227,8 @@ time.sleep(2)
 io.suitcase_90(1)
 io.suitcase_90(0)
  
-
+io.digital_output(1)
+io.digital_output(0)
 
 #left
 io.work_lr(0)
