@@ -87,7 +87,7 @@ class IO:
             self.set(down, 0)
            
         
-        time.sleep(3)
+        time.sleep(2)
         
     #中间液压开关控制
     def mid(self,pos):
@@ -138,7 +138,7 @@ class IO:
             self.set(left, 0)
             self.set(right, 0)
       
-        time.sleep(3)
+        time.sleep(2)
         
           
     #行李箱拉杆左右只有两个液压开关控制
@@ -160,7 +160,7 @@ class IO:
             self.set(left, 0)
             self.set(right, 0)
  
-        time.sleep(3)
+        time.sleep(1)
     
     #行李箱拉杆旋转90°
     def suitcase_90(self,pos):
@@ -173,7 +173,7 @@ class IO:
             self.set(rotate, 0)
      
       
-        time.sleep(3)
+        #time.sleep(1)
         
     #红外补光灯的亮灭
     def digital_output(self,signal):
@@ -191,8 +191,6 @@ class IO:
 
 '''
 io = IO()
-
-
 
 #up
 io.work_ud(0)

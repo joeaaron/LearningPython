@@ -3,7 +3,7 @@
  ############################################################
  #  Created on: 2018.04                                     #
  #  Author: cowa                                            #
- #  Update: 2018.05.31
+ #  Update: 2018.06.06
  #  Email:  aaron.pan@cowarobot.com                         #
  ############################################################
 import sys, math, copy, threading, struct, socket, ConfigParser, time, os
