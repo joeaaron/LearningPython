@@ -138,6 +138,8 @@ class QMainWindow(QtGui.QMainWindow):
         self.io.work_lr(1)
         self.io.suitcase_lr(1)
         self.io.suitcase_90(0)
+        self.io.cylinder(0)
+        
         print 'Zero done'
         return True   
         
@@ -264,17 +266,11 @@ class QMainWindow(QtGui.QMainWindow):
         return True   
         
     def Run(self):
-        '''
-        if not self.Target(0):
-            QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
-            return
-        if not self.Target(2):
-            QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
-            return
-        '''
+        
         #清空文件夹
         self.ClearDir()
-        #1号激光摄像头到指定位置拍摄
+         
+        # 1号激光摄像头到指定位置拍摄
         for index in range(0, 7):
             #三个轴同时运动
             if not self.Target(index):
@@ -288,12 +284,12 @@ class QMainWindow(QtGui.QMainWindow):
             if not self.GetBackToNormal(index):
                 QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes); 
                 return
-                
-     
-        self.io.suitcase_90(1)        #旋转90°,更换控制器后取消注释2018-06-01
         
-        #time.sleep(10)
-        
+        # 气缸推动，棋盘格到指定位置
+        self.io.cylinder(1)
+        # 拉杆旋转到2，4位
+        self.io.suitcase_90(1)      
+       
         # 2, 4 号激光摄像头到指定位置拍摄
         for index in range(0, 7):
             #三个轴同时运动
@@ -318,21 +314,15 @@ class QMainWindow(QtGui.QMainWindow):
         if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         #bin文件拷贝到文件夹外层
         self.WaitCalc()
+        #bin文件推送到拉杆
         self.PushFiles()
-        
-        '''
-        #标定结果质检
-        if self.Check():
-            QMessageBox.information(self, u"OK", u"标定完成", QMessageBox.Yes)
-        #再次检查回零是否成功
-        if not self.Move2Zero():QMessageBox.information(self, u"错误", u"运动控制错误", QMessageBox.Yes) ; return
         #打包
         self.Zip()
         #开灯
         self.LED(1)
-        '''
+        
     def Check(self):
-        self.PushFiles()
+        #self.PushFiles()
         
         try:
             lasers = self.R1.requestLaser()
