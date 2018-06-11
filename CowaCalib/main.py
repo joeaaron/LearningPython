@@ -25,6 +25,9 @@ import ip_h3c
 ALLIP = os.listdir('.\\backup')
 ALLIP = [i.replace('.zip', '') for i in ALLIP]
 
+MESSAGE = 'The directory already exists.'
+DIR = 'image'
+
 class QMainWindow(QtGui.QMainWindow):
     R1 = None
     tasks = []
@@ -482,8 +485,15 @@ class QMainWindow(QtGui.QMainWindow):
     def ClearDir(self):
         try:shutil.rmtree('image')
         except: pass
-        try: os.makedirs('image')
-        except: pass
+        #try: os.makedirs('image')
+        #except: pass
+        try:
+            if not os.path.exists(DIR): # os.path.join() for making a full path safely
+                os.makedirs(DIR)        # If not create the directory, inside their home directory
+            else:
+                print(MESSAGE)
+        except Exception as e:
+        print(e)
         os.makedirs('image\\1')
         os.makedirs('image\\2')
         os.makedirs('image\\4')

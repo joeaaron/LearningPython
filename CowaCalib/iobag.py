@@ -189,11 +189,11 @@ class IO:
     
     #推动气缸
     def cylinder(self,trig):
-        led = 9        #根据具体情况修改
-        # 亮
+        led = 7        #根据具体情况修改
+        # 推动
         if trig == 1:
             self.set(led, 1)
-        # 灭
+        # 回零
         elif trig == 0:
             self.set(led, 0)
      
