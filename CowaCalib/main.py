@@ -493,7 +493,7 @@ class QMainWindow(QtGui.QMainWindow):
             else:
                 print(MESSAGE)
         except Exception as e:
-        print(e)
+            print(e)
         os.makedirs('image\\1')
         os.makedirs('image\\2')
         os.makedirs('image\\4')
