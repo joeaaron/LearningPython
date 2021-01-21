@@ -20,3 +20,10 @@ Python Examples to improve your knowledge of  it
 ### 六、搜集的经典程序 ###
 
 ####  1. Python简单分析微信好友
+
+#### 2.Udacity
+
+#### 3.练习册
+
+### 七、OpenCV
+
