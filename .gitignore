@@ -92,3 +92,7 @@ OpenCV/calib/.idea/misc.xml
 OpenCV/calib/.idea/cali.iml
 OpenCV/calib/.gitignore
 CowaCalib/backup
+项目程序/stitch/__pycache__/VC/2_trans.txt
+项目程序/stitch/__pycache__/VC/1_trans.txt
+项目程序/stitch/__pycache__/calb.xml
+项目程序/stitch/__pycache__/txts2xml.pyc
