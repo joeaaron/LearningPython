@@ -1,5 +1,9 @@
 # LearningPython
-Python Examples to improve your knowledge of  it
+We assume that you're not a freshman. So, you should know all of these like the image below.
+
+![](https://raw.githubusercontent.com/joeaaron/YouSee/main/python/python%E8%AF%AD%E6%B3%95%E5%9B%BE.png) 
+
+Python Examples to improve your knowledge of  it. Enjoy it!
 
 #### 一、python让工作自动化
 
