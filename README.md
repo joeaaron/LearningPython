@@ -1,29 +1,45 @@
 # LearningPython
 Python Examples to improve your knowledge of  it
 
-### 一、python练习实例100|菜鸟教程 ###
+#### 一、python让工作自动化
 
-### 二、learn python the hard way ###
+##### 1、图片融合
 
-### 三、python让工作自动化 ###
+Resizes all images in current working directory to fit in a 300x300 square, and adds catlogo.png to the lower-right corner.
 
-### 四、python结合opencv好玩的程序 ###
+#### 二、Practice
 
-### 五、项目程序 ###
+##### 1、python练习实例100|菜鸟教程 #####
 
-####  1. cam_web
+##### 2、learn python the hard way #####
 
-####  2. CowaCalib
+##### 3、Udacity
 
-####  3. flask-video
+##### 4、练习册
 
-### 六、搜集的经典程序 ###
+#### 三、Classic ####
 
-####  1. Python简单分析微信好友
+##### 1、Algorithm
 
-#### 2.Udacity
+##### 2、Open3D
 
-#### 3.练习册
+##### 3、OpenCV
 
-### 七、OpenCV
+##### 4、Python简单分析微信好友
+
+#### 四、项目程序 ####
+
+#####  1、cam-web
+
+#####  2、cowa-calib
+
+#####  3、flask-video
+
+##### 4、sensor-stitch
+
+####  
+
+#### 
+
+
 
